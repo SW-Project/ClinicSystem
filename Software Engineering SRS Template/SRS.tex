@@ -3,7 +3,7 @@
 \usepackage{placeins}
 %opening
 \title{Software Requirement Specification Document}
-\author{ Mariam Hesham,Nour Ahmed ,Samiha Hesham,Sandra Fares}
+\author{Sandra Fares,Nour Ahmed ,Samiha Hesham, Mariam Hesham }
 
 \begin{document}
 
@@ -502,34 +502,34 @@ the system database                                                             
 \label{tab:my-table}
 \begin{tabular}{|p{0.25\textwidth}|p{0.75\textwidth}|}
 \hline
-\textbf{Function:} & Indicates whether this class is abstract or concrete.
+\textbf{Function:} & update UserType.
 \\ \hline
-\textbf{ID}  &            
+\textbf{ID}  & FR13           
 
 \\ \hline
-\textbf{Description}    &                                                                     
+\textbf{Description}    & admin can update the type of the user if there were any changes                                                                  
 \\ \hline
-\textbf{Type}    &         
+\textbf{Type}    & boolean  
 
 \\ \hline
-\textbf{Input}        & 
-
-
-\\ \hline
-\textbf{Action}            & 
-
-\\ \hline
-\textbf{Output}            & 
-
-\\ \hline
-\textbf{Precondition}           &   
-
-\\ \hline
-\textbf{Post-condition}           & 
+\textbf{Input}        & UserTypeID
 
 
 \\ \hline
-\textbf{Dependencies}           & 
+\textbf{Action}            & admin update the type of the user
+
+\\ \hline
+\textbf{Output}            & if UserType is updated return true, else return false and show error message
+
+\\ \hline
+\textbf{Precondition}           & there must be at least one UserType added to the storage and action must be made by the admin 
+
+\\ \hline
+\textbf{Post-condition}           & the record of the user is updated in the database
+
+
+\\ \hline
+\textbf{Dependencies}           & FR03,FR06,FR10
 \\ \hline
 \end{tabular}
 \end{table}
@@ -540,34 +540,34 @@ the system database                                                             
 \label{tab:my-table}
 \begin{tabular}{|p{0.25\textwidth}|p{0.75\textwidth}|}
 \hline
-\textbf{Function:} & Indicates whether this class is abstract or concrete.
+\textbf{Function:} & view profile.
 \\ \hline
-\textbf{ID}  &            
+\textbf{ID}  & FR14         
 
 \\ \hline
-\textbf{Description}    &                                                                     
+\textbf{Description}    & user can view his/her profile, admin can alse view the profile                                                                  
 \\ \hline
-\textbf{Type}    &         
+\textbf{Type}    &  return array       
 
 \\ \hline
-\textbf{Input}        & 
-
-
-\\ \hline
-\textbf{Action}            & 
-
-\\ \hline
-\textbf{Output}            & 
-
-\\ \hline
-\textbf{Precondition}           &   
-
-\\ \hline
-\textbf{Post-condition}           & 
+\textbf{Input}        & UserID
 
 
 \\ \hline
-\textbf{Dependencies}           & 
+\textbf{Action}            & admin views user profile
+
+\\ \hline
+\textbf{Output}            & Array filled by each user’s data
+
+\\ \hline
+\textbf{Precondition}           & Check if the user exists  
+
+\\ \hline
+\textbf{Post-condition}           &  the certain profile
+
+
+\\ \hline
+\textbf{Dependencies}           & FR10
 \\ \hline
 \end{tabular}
 \end{table}
@@ -1239,23 +1239,7 @@ use case diagram
 
 \end{itemize}
 
-
-\FloatBarrier
 \subsection{Collected material}
-
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=10.0cm, height=10.0cm]{./ref1.jpeg}
-\label{label1}
-\end{figure}
-\begin{figure}[h]
-\centering
-\includegraphics[width=10.0cm, height=10.0cm]{./ref2.jpeg}
-
-\label{label2}
-\end{figure}
-\FloatBarrier
 
 \section {References}
 
