@@ -1,14 +1,7 @@
 \documentclass[]{article}
-\usepackage{placeins}
-%Image-related packages
 \usepackage{graphicx}
-\usepackage{float}
-\usepackage{subcaption}
-\usepackage[utf8]{inputenc}
-\usepackage[export]{adjustbox}
-\usepackage{wrapfig}
+\usepackage{placeins}
 %opening
-
 \title{Software Requirement Specification Document}
 \author{Sandra Fares,Nour Ahmed ,Samiha Hesham, Mariam Hesham }
 
@@ -51,12 +44,6 @@ The project aims to build an application program to reduce the manual work for m
   \item The patients must have the authority to edit their appointment details.
   \item The receptionist must view patients' reservations and should deal with financial staff.
 \end{enumerate}
-
-\subsection{Product context}
-\subsubsection{Contect Diagram}
-
-\subsubsection{Block Diagram}
-
 
 \subsection{Similar System Information}
 This software is similar to various generic products. However, MedDNA and eClinic are the most similar to our system. These systems are stand-alone clinic management systems that are available for installation by any customer in need. Their purpose is to help in managing appointments, viewing patients' history, and offering effortless communication between the Doctors and their Patients, just like our system is intended to do.
@@ -517,7 +504,7 @@ the system database                                                             
 \hline
 \textbf{Function:} & update UserType.
 \\ \hline
-\textbf{ID}  & FR13           
+\textbf{ID}  & FR12           
 
 \\ \hline
 \textbf{Description}    & admin can update the type of the user if there were any changes                                                                  
@@ -542,7 +529,7 @@ the system database                                                             
 
 
 \\ \hline
-\textbf{Dependencies}           & FR03,FR06,FR10
+\textbf{Dependencies}           & FR09
 \\ \hline
 \end{tabular}
 \end{table}
@@ -555,7 +542,7 @@ the system database                                                             
 \hline
 \textbf{Function:} & view profile.
 \\ \hline
-\textbf{ID}  & FR14         
+\textbf{ID}  & FR13         
 
 \\ \hline
 \textbf{Description}    & user can view his/her profile, admin can alse view the profile                                                                  
@@ -580,7 +567,7 @@ the system database                                                             
 
 
 \\ \hline
-\textbf{Dependencies}           & FR10
+\textbf{Dependencies}           & FR03,FR05,FR09
 \\ \hline
 \end{tabular}
 \end{table}
@@ -593,7 +580,7 @@ the system database                                                             
 \hline
 \textbf{Function:} & send notification.
 \\ \hline
-\textbf{ID}  & FR15           
+\textbf{ID}  & FR14           
 
 \\ \hline
 \textbf{Description}    & the function for sending the notification to the patient                                                                 
@@ -618,7 +605,7 @@ the system database                                                             
 
 
 \\ \hline
-\textbf{Dependencies}           & none
+\textbf{Dependencies}           & FR09
 \\ \hline
 \end{tabular}
 \end{table}
@@ -769,7 +756,7 @@ the system database                                                             
 
 
 \\ \hline
-\textbf{Dependncies}           & FR06
+\textbf{Dependncies}           & FR05,FR09
 \\ \hline
 \end{tabular}
 \end{table}
@@ -818,30 +805,30 @@ the system database                                                             
 \label{tab:my-table}
 \begin{tabular}{|p{0.25\textwidth}|p{0.75\textwidth}|}
 \hline
-\textbf{Function:} & Indicates whether this class is abstract or concrete.
+\textbf{Function:} & send message.
 \\ \hline
-\textbf{ID}  &            
+\textbf{ID}  & FR20           
 
 \\ \hline
-\textbf{Description}    &                                                                     
+\textbf{Description}    & the function for sending messages between the users                                                                    
 \\ \hline
-\textbf{Type}    &         
+\textbf{Type}    & void        
 
 \\ \hline
-\textbf{Input}        & 
+\textbf{Input}        & array of users
 
 
 \\ \hline
-\textbf{Action}            & 
+\textbf{Action}            & check if the array of users is not empty then send the message
 
 \\ \hline
-\textbf{Output}            & 
+\textbf{Output}            & the desired message appears
 
 \\ \hline
-\textbf{Pre condition}           &   
+\textbf{Pre condition}           & the user send the message  
 
 \\ \hline
-\textbf{Post condition}           & 
+\textbf{Post condition}           & messages are sent
 
 
 \\ \hline
@@ -1171,7 +1158,7 @@ N/A
 
 
 \section{Design Constraints}
-The system should be adaptable to be visited from different kinds of devices
+The system should be adaptable to be vied from different kinds of devices
 either tablets, laptops... etc. Also we had a constrain with which is the
 internet speed it varies from one user to another. 
 \section{Other non-functional attributes}
@@ -1194,10 +1181,10 @@ This system can be installed in any personal computers supporting windows operat
 The system keeps on updating the data according to the transactions that takes place.
 
 \section{Preliminary Object-Oriented Domain Analysis}
-
+This section presents a list of the fundamental objects that must be modeled within the system to satisfy its requirements. The purpose is to provide an alternative, ''structural'' view on the requirements stated above and how they might be satisfied in the system. A primitive class diagram to be delivered.
 
 \subsection{Class diagram}
-
+This section should contain a set of graphs that illustrate the primary inheritance hierarchy (is-kind-of) for the system. For example: 
 
 
 
