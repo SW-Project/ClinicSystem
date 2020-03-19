@@ -578,34 +578,34 @@ the system database                                                             
 \label{tab:my-table}
 \begin{tabular}{|p{0.25\textwidth}|p{0.75\textwidth}|}
 \hline
-\textbf{Function:} & Indicates whether this class is abstract or concrete.
+\textbf{Function:} & send notification.
 \\ \hline
-\textbf{ID}  &            
+\textbf{ID}  & FR15           
 
 \\ \hline
-\textbf{Description}    &                                                                     
+\textbf{Description}    & the function for sending the notification to the patient                                                                 
 \\ \hline
-\textbf{Type}    &         
+\textbf{Type}    &  boolean       
 
 \\ \hline
-\textbf{Input}        & 
-
-
-\\ \hline
-\textbf{Action}            & 
-
-\\ \hline
-\textbf{Output}            & 
-
-\\ \hline
-\textbf{Precondition}           &   
-
-\\ \hline
-\textbf{Post-condition}           & 
+\textbf{Input}        & notification object
 
 
 \\ \hline
-\textbf{Dependencies}           & 
+\textbf{Action}            & check for receiving the notificatin 
+
+\\ \hline
+\textbf{Output}            & if true string notification, if false there will be an error message 
+
+\\ \hline
+\textbf{Precondition}           & the user must be existed in the database  
+
+\\ \hline
+\textbf{Post-condition}           & the user will receive the notification, the notification is filled in the database
+
+
+\\ \hline
+\textbf{Dependencies}           & none
 \\ \hline
 \end{tabular}
 \end{table}
