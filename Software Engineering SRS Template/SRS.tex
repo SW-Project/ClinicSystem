@@ -279,34 +279,26 @@ Our client needs to replace all the manual operations done daily in his clinic i
 \label{tab:my-table}
 \begin{tabular}{|p{0.25\textwidth}|p{0.75\textwidth}|}
 \hline
-\textbf{Function:} & Indicates whether this class is abstract or concrete.
+\textbf{Function:} & Create User.
 \\ \hline
-\textbf{ID}  &            
-
+\textbf{ID}  & FR05          
 \\ \hline
-\textbf{Description}    &                                                                     
+\textbf{Description}    &  The functions get the user type ID according from which page the inserting process whether the patient's registration page or from the administrator is happening, then it
+uses the input data to insert a new row in users table in
+the system database                                                              \\ \hline
+\textbf{Type}    & void     
 \\ \hline
-\textbf{Type}    &         
-
+\textbf{Input}  & user type id and user data
 \\ \hline
-\textbf{Input}        & 
-
-
+\textbf{Action} &  checks if the user's email,password and phone number are validated, if so it enters the user record in the database and returns true else it returns false and an error message will appear 
 \\ \hline
-\textbf{Action}            & 
-
+\textbf{Output} & New User Record in Database
 \\ \hline
-\textbf{Output}            & 
-
+\textbf{Pre condition}  & User's information is right and validated     
 \\ \hline
-\textbf{Pre condition}           &   
-
+\textbf{Post condition} & Creating a new row in database table with new ID for the user
 \\ \hline
-\textbf{Post condition}           & 
-
-
-\\ \hline
-\textbf{Dependncies}           & 
+\textbf{Dependncies} & FR00 , FR01 , FR02  
 \\ \hline
 \end{tabular}
 \end{table}
@@ -317,34 +309,24 @@ Our client needs to replace all the manual operations done daily in his clinic i
 \label{tab:my-table}
 \begin{tabular}{|p{0.25\textwidth}|p{0.75\textwidth}|}
 \hline
-\textbf{Function:} & Indicates whether this class is abstract or concrete.
+\textbf{Function:} & Delete User.
 \\ \hline
-\textbf{ID}  &            
-
+\textbf{ID}        &FR06            
 \\ \hline
-\textbf{Description}    &                                                                     
+\textbf{Description} & The Function is to remove the selected user row from users table                                                         \\ \hline
+\textbf{Type}     & Boolean       
 \\ \hline
-\textbf{Type}    &         
-
+\textbf{Input}   & ID of the user selected to be removed 
 \\ \hline
-\textbf{Input}        & 
-
-
+\textbf{Action}  & check if the user id exists in database
 \\ \hline
-\textbf{Action}            & 
-
+\textbf{Output}  & A Success Message if User is deleted 
 \\ \hline
-\textbf{Output}            & 
-
+\textbf{Pre condition}  & Administrator chooses which user to be deleted  
 \\ \hline
-\textbf{Pre condition}           &   
-
+\textbf{Post condition} & User Record is deleted from database and database is updated 
 \\ \hline
-\textbf{Post condition}           & 
-
-
-\\ \hline
-\textbf{Dependncies}           & 
+\textbf{Dependncies}  &FR05 
 \\ \hline
 \end{tabular}
 \end{table}
@@ -355,34 +337,27 @@ Our client needs to replace all the manual operations done daily in his clinic i
 \label{tab:my-table}
 \begin{tabular}{|p{0.25\textwidth}|p{0.75\textwidth}|}
 \hline
-\textbf{Function:} & Indicates whether this class is abstract or concrete.
+\textbf{Function:} & Search User.
 \\ \hline
-\textbf{ID}  &            
+\textbf{ID}  & FR07           
+\\ \hline
+\textbf{Description} & The Function returns the user with the same id or name that being searched for by one of our staff users                                              
+\\ \hline
+\textbf{Type}  & Return Function        
 
 \\ \hline
-\textbf{Description}    &                                                                     
-\\ \hline
-\textbf{Type}    &         
+\textbf{Input}  & Id or Name of the desired user 
 
 \\ \hline
-\textbf{Input}        & 
-
-
+\textbf{Action} & check if user id or name matches any of records in database , if there is a user show it else returns null
 \\ \hline
-\textbf{Action}            & 
-
+\textbf{Output} & if Users details exists
 \\ \hline
-\textbf{Output}            & 
-
+\textbf{Pre condition}   &   One of staff users enters users id or name needed to be found
 \\ \hline
-\textbf{Pre condition}           &   
-
+\textbf{Post condition} & user record is retrieved from database if is found 
 \\ \hline
-\textbf{Post condition}           & 
-
-
-\\ \hline
-\textbf{Dependncies}           & 
+\textbf{Dependncies} & -- 
 \\ \hline
 \end{tabular}
 \end{table}
@@ -393,34 +368,27 @@ Our client needs to replace all the manual operations done daily in his clinic i
 \label{tab:my-table}
 \begin{tabular}{|p{0.25\textwidth}|p{0.75\textwidth}|}
 \hline
-\textbf{Function:} & Indicates whether this class is abstract or concrete.
+\textbf{Function:} & Update User
 \\ \hline
-\textbf{ID}  &            
+\textbf{ID}  &  FR08          
+\\ \hline
+\textbf{Description} & The Function performs an sql query to users table to update a certain record according to a specific user ID                                                     
+\\ \hline
+\textbf{Type}    &  Boolean       
 
 \\ \hline
-\textbf{Description}    &                                                                     
+\textbf{Input}  & User ID and the desired category to be updated with it's new record  
 \\ \hline
-\textbf{Type}    &         
-
+\textbf{Action} & check if those data can be updated 
 \\ \hline
-\textbf{Input}        & 
-
-
+\textbf{Output}  & success message or failure message  
 \\ \hline
-\textbf{Action}            & 
+\textbf{Pre condition}  &  check if user exists in database and has the right to update 
 
 \\ \hline
-\textbf{Output}            & 
-
+\textbf{Post condition} & records in database are updated  
 \\ \hline
-\textbf{Pre condition}           &   
-
-\\ \hline
-\textbf{Post condition}           & 
-
-
-\\ \hline
-\textbf{Dependncies}           & 
+\textbf{Dependncies}    & -- 
 \\ \hline
 \end{tabular}
 \end{table}
@@ -431,34 +399,63 @@ Our client needs to replace all the manual operations done daily in his clinic i
 \label{tab:my-table}
 \begin{tabular}{|p{0.25\textwidth}|p{0.75\textwidth}|}
 \hline
-\textbf{Function:} & Indicates whether this class is abstract or concrete.
+\textbf{Function:} & Create Usertype
 \\ \hline
-\textbf{ID}  &            
+\textbf{ID}  & FR09           
 
 \\ \hline
-\textbf{Description}    &                                                                     
+\textbf{Description}  & this function is to add new user type to the system in the database                                                                     
 \\ \hline
-\textbf{Type}    &         
-
-\\ \hline
-\textbf{Input}        & 
-
+\textbf{Type}   & Boolean     
 
 \\ \hline
-\textbf{Action}            & 
+\textbf{Input}  & User Type name
 
 \\ \hline
-\textbf{Output}            & 
+\textbf{Action}  & Check if the user type name is not duplicated in the database , if so it enters the user type record in the database and returns true else return false
 
 \\ \hline
-\textbf{Pre condition}           &   
+\textbf{Output}  & Success Message if user type is created 
 
 \\ \hline
-\textbf{Post condition}           & 
-
+\textbf{Pre condition}  & Check if user type doesn't exist   
+\\ \hline
+\textbf{Post condition}  & Creating a new database record with a new ID and add the new user type name in it 
+\\ \hline
+\textbf{Dependncies} & ---
+\\ \hline
+\end{tabular}
+\end{table}
+\FloatBarrier
+\begin{table}[h]
+\caption{Class Name - }
+\label{tab:my-table}
+\begin{tabular}{|p{0.25\textwidth}|p{0.75\textwidth}|}
+\hline
+\textbf{Function:} & Update Usertype
+\\ \hline
+\textbf{ID}  & FR10          
 
 \\ \hline
-\textbf{Dependncies}           & 
+\textbf{Description} & this function is to Update an existing user type in database according to the user type ID \\ \hline
+\textbf{Type}    &  Boolean       
+
+\\ \hline
+\textbf{Input}   & The User type data to be updated 
+
+\\ \hline
+\textbf{Action}  & Check if user type is updated and return true else return false or error message 
+
+\\ \hline
+\textbf{Output}  & Success Message if updated
+
+\\ \hline
+\textbf{Pre condition}  & Check if user type exists    
+
+\\ \hline
+\textbf{Post condition} & Update the system database row of the user type according to the user type ID  
+\\ \hline
+\textbf{Dependncies}  & FR09
 \\ \hline
 \end{tabular}
 \end{table}
@@ -469,72 +466,32 @@ Our client needs to replace all the manual operations done daily in his clinic i
 \label{tab:my-table}
 \begin{tabular}{|p{0.25\textwidth}|p{0.75\textwidth}|}
 \hline
-\textbf{Function:} & Indicates whether this class is abstract or concrete.
+\textbf{Function:} & Delete UserType 
 \\ \hline
-\textbf{ID}  &            
+\textbf{ID}  & FR11          
 
 \\ \hline
-\textbf{Description}    &                                                                     
+\textbf{Description}  & This function is to delete the selected user type row from user type in database                                                                     
 \\ \hline
-\textbf{Type}    &         
-
-\\ \hline
-\textbf{Input}        & 
-
+\textbf{Type}   & Boolean         
 
 \\ \hline
-\textbf{Action}            & 
+\textbf{Input}  & ID of which user type to be deleted 
 
 \\ \hline
-\textbf{Output}            & 
+\textbf{Action} & Check if user Type id exists in the database to delete it 
 
 \\ \hline
-\textbf{Pre condition}           &   
+\textbf{Output}  & Message if user type deleted  
 
 \\ \hline
-\textbf{Post condition}           & 
-
-
-\\ \hline
-\textbf{Dependncies}           & 
-\\ \hline
-\end{tabular}
-\end{table}
-
-\FloatBarrier
-\begin{table}[h]
-\caption{Class Name - }
-\label{tab:my-table}
-\begin{tabular}{|p{0.25\textwidth}|p{0.75\textwidth}|}
-\hline
-\textbf{Function:} & Indicates whether this class is abstract or concrete.
-\\ \hline
-\textbf{ID}  &            
+\textbf{Pre condition}   & The selected user type needed to be deleted   
 
 \\ \hline
-\textbf{Description}    &                                                                     
-\\ \hline
-\textbf{Type}    &         
+\textbf{Post condition}  & Updating the database by removing the user type id row from table 
 
 \\ \hline
-\textbf{Input}        & 
-
-
-\\ \hline
-\textbf{Action}            & 
-
-\\ \hline
-\textbf{Output}            & 
-
-\\ \hline
-\textbf{Pre condition}           &   
-
-\\ \hline
-\textbf{Post condition}           & 
-
-
-\\ \hline
-\textbf{Dependncies}           & 
+\textbf{Dependncies}    & ---- 
 \\ \hline
 \end{tabular}
 \end{table}
