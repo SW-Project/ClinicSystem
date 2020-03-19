@@ -731,7 +731,7 @@ the system database                                                             
 \hline
 \textbf{Function:} & view notification.
 \\ \hline
-\textbf{ID}  & FR16           
+\textbf{ID}  & FR18           
 
 \\ \hline
 \textbf{Description}    & viewing all the notification in the database                                                                    
@@ -767,34 +767,34 @@ the system database                                                             
 \label{tab:my-table}
 \begin{tabular}{|p{0.25\textwidth}|p{0.75\textwidth}|}
 \hline
-\textbf{Function:} & Indicates whether this class is abstract or concrete.
+\textbf{Function:} & delete notification.
 \\ \hline
-\textbf{ID}  &            
+\textbf{ID}  & FR19
 
 \\ \hline
-\textbf{Description}    &                                                                     
+\textbf{Description}    & the admin can delete the notifications from the database                                                                     
 \\ \hline
-\textbf{Type}    &         
+\textbf{Type}    &  boolean       
 
 \\ \hline
-\textbf{Input}        & 
-
-
-\\ \hline
-\textbf{Action}            & 
-
-\\ \hline
-\textbf{Output}            & 
-
-\\ \hline
-\textbf{Pre condition}           &   
-
-\\ \hline
-\textbf{Post condition}           & 
+\textbf{Input}        & notification object
 
 
 \\ \hline
-\textbf{Dependncies}           & 
+\textbf{Action}            & check for the existence of the notification and delete it 
+
+\\ \hline
+\textbf{Output}            & confirmation message if true otherwise there will be an error message 
+
+\\ \hline
+\textbf{Pre condition}           & select the desired notification that will be deleted  
+
+\\ \hline
+\textbf{Post condition}           & the desired notification record is deleted
+
+
+\\ \hline
+\textbf{Dependncies}           & FR18
 \\ \hline
 \end{tabular}
 \end{table}
