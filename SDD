@@ -1,0 +1,201 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{makecell}
+\usepackage[margin=0.7in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx}
+
+\renewcommand\theadalign{bc}
+\renewcommand\theadfont{\bfseries}
+\renewcommand\theadgape{\Gape[4pt]}
+\renewcommand\cellgape{\Gape[4pt]}
+
+\usepackage[
+backend=biber,
+style=numeric,
+sorting=ynt
+]{biblatex}
+
+\addbibresource{bibliography.bib}
+
+%opening
+\title{Software design description for .... }
+\author{Ahmed Mohamed, Mohamed Ahmed ,....}
+
+\begin{document}
+\maketitle
+\begin{table}[htp]
+
+\begin{tabular}{|l|l|l|}
+\hline
+\thead{SDD Version}    & \thead{Date} & \thead{Reason for Change}  \\ \hline
+1.0 & 12-April-2020   & \makecell{SDD First version’s specifications are defined}   \\ \hline
+1.1 & 20-April-2020   & \makecell{Scope updated} \\ \hline
+\end{tabular}
+\caption{Document version history}
+\end{table}
+
+\begin{table}[htp]
+\begin{tabular}{cc}
+\thead{GitHub:}    & {........................................................}   
+\end{tabular}
+\end{table}
+
+\section{Introduction}
+
+\subsection{Overview}
+Provide an overview of this document and its organization.
+
+\subsection{Scope}
+
+-Provide a description of the document scope such as:
+ This software design description (SDD) describes xx..... system design and provides the main design viewpoints of the system to communicate to key design stakeholders. This SDD document is used to record design decision and their rationale in order to avoid disputes over what was previously agreed upon.\\
+-provide full identification of the system and the software to which this document applies, including, as applicable, title(s), abbreviation(s), and version number(s).\\
+
+\subsection{Purpose}
+A software design description (SDD) is a representation of a software design to be used for recording design information and communicating that design information to key design stakeholders \cite{IEEE09}.\\
+In this section identify the purpose of this software  design  description (SDD) and its intended audience. (e.g. This software  design  description (SDD) describes the architecture and system design of XX.. ).
+
+\subsection{Intended audience}
+Identify here the stakeholders that this SDD document is intended for.Describe any security or privacy considerations associated with the use of this SDD document.
+
+\subsection{Definitions and Acronyms}
+This section is optional.
+Provide  definitions of all terms, acronyms, and  abbreviations that might exist to  properly 
+interpret the SDD. These definitions should be items used in the SDD that are most likely not 
+known to the audience.
+
+\begin{table}[h]
+\begin{tabular}{|l|l|}
+\hline
+\multicolumn{1}{|c|}{\textbf{Term}} & \multicolumn{1}{c|}{\textbf{Definition}}                                                                                              \\ \hline
+Software Design Document (SDD)      & \begin{tabular}[c]{@{}l@{}}Used as the primary medium for communicating software \\ design information.\end{tabular}                  \\ \hline
+Design Entity                       & \begin{tabular}[c]{@{}l@{}}An element of a design that is structurally and functionally \\ distinct from other elements.\end{tabular} \\ \hline
+Design rationale                      & \begin{tabular}[c]{@{}l@{}}Information capturing the reasoning of the designer that \\led to the system as designed, including design options, \\trade-offs considered, decisions made, \\and the justifications of those
+decisions. .\end{tabular} \\ \hline
+
+\end{tabular}
+\end{table}
+ 
+\section{Project Overview}
+This paragraph shall briefly state the purpose of the system and the software to which this document applies. It shall describe the general nature of the system and software; identify the project sponsor, user, developer, and support agencies; identify current and planned operating sites.
+
+\subsection{Project Scope}
+A project scope,  outlines the procedures taken to deliver the desired system. It will not describe in details how the system works, but rather the tools and methods required to successfully deliver the specified features.
+-Give a high-level description of the software including brief description of main features.\\
+
+- Explain the benefits of your project.\\
+- State The end results (a web application for xx...) that your project will deliver upon completion.\\
+- Provide any other background information if necessary.
+
+\subsection{Goals and objectives}
+- Write out a list of goals and objectives for your system\\
+Use the SMART approach to writing objectives as it helps lay the groundwork to make sure you have got everything you need.
+SMART is an acronym that stands for:\\
+S = Specific\\
+M = Measurable\\
+A = Achievable (or attainable, actionable, appropriate)\\
+R = Realistic\\
+T = Time-bound (or timely, traceable)\\
+
+\subsection {Project Timeline}
+The overall time frame and major phases (milestones) along with deliverable for each phase.
+
+\section{ Context viewpoint}
+Provide a description of Systems services and users. 
+You can provide use case diagram and context diagram here.
+
+\section{System Architecture Design} \label{s-arch}
+
+\begin{figure}[tbh]
+\centering
+\includegraphics[width=0.7\linewidth]{./image}
+\caption{Architectural Design}
+\label{archdsgn}
+\end{figure}
+
+\subsection{Logical viewpoint} \label{ss-logical}
+Write a  high level overview  of how responsibilities of the system were partitioned and then assigned to subsystems. Identify each high level subsystem and  the  roles or responsibilities assigned to it. 
+Describe  how  the subsystems collaborate with each other in order to achieve the desired functionality. Don t go into too much detail about the individual subsystems. The main purpose is to gain a general understanding  of how  and why the system was decomposed, and  how the  individual parts work together. Provide a diagram showing the major subsystems and data repositories and their interconnections. Describe the diagram if required.
+
+The purpose of the Logical viewpoint is to elaborate existing and designed types and their implementations as classes and interfaces with their structural static relationships. 
+provide detailed description of your used architecture here such as MVC, layered architecture. use figures such as in figure \ref{archdsgn}etc.
+\subsubsection{Design Rationale}
+Discuss the rationale for selecting the architecture described in section \ref{ss-logical} including critical issues
+and  trade/offs that were  considered. You  may discuss other  architectures that were 
+considered, provided that you explain why you didn't choose them.
+
+\subsection{Patterns use viewpoint}
+This viewpoint addresses design ideas focusing on the used design patterns. 
+UML class diagram and the UML package diagram can be used here to illustrate the used design patterns.\\
+\subsubsection{Design Rationale}
+You need to provide the design rationale for using these design patterns.
+
+\subsection{Composition viewpoint}
+Provide a decomposition of the subsystems in the architectural design. Supplement with text 
+as needed. 
+provide subsystem model, package diagrams, generalization hierarchy diagram(s) (if any), aggregation hierarchy diagram(s) (if any).
+
+\subsection{Structure viewpoint}\label{Structure}
+The Structure viewpoint is used to document the internal organization of the system.
+Provide here a detailed UML class diagram of the system.
+
+\subsection{Algorithm viewpoint}
+In this section, provide closer look at what each component does in a more systematic way. If you gave a functional description in section \ref{Structure}, provide a summary of your algorithm for each function listed in\ref{Structure} in procedural description language (PDL) or pseudo-code. If you gave an OO description, summarize each object member function for all the objects listed in \ref{Structure}.\\
+Decision tables and flowcharts; program design languages (PDL), “pseudo-code,” and (actual) programming languages may also be used. 
+
+\subsection{Interaction viewpoint}
+Provides description of Object communication, messaging using UML sequence diagrams
+
+
+\subsection{Interface viewpoint}
+The Interface viewpoint provides programmers, and testers the means to know how
+to correctly use the provided services. 
+This viewpoint consists of a set of interface specifications for each entity. \\
+NOTE—User interfaces are addressed separately. 
+
+\section{Data Design}
+\subsection{Data Description}
+Explain how the information domain of your system is transformed into data structures. Describe how the major data or system entities are stored, processed and organized. \\
+You may consider the answer for the following questions:\\
+What is the original format of the data (paper based, excel files, old system database)?\\
+Identify the method used to capture the data into your system(web page forms, import documents etc..)?\\
+How large is the database expected to be (in numbers of rows and columns for the main entities)?\\
+What is the expected number of users/customers for the system?\\
+How is your entity keys(ids) constructed (is there a specific code or format for ID definition)?
+Does your data contain date/time, if yes which format are they presented in?
+You may provide data models such as Entity Relationship Diagram (ERD) in this section.
+
+\subsection{Database design description}
+Describe any databases (provide database schema diagram) and/or description of other data storage items.
+
+\section{Human Interface Design}
+
+\subsection {User Interface}
+Describe the functionality of the system from the user s perspective. Explain  how the user 
+will be  able  to use  your system to complete  all the  expected  features and  the  feedback 
+information that will be displayed for the user.
+
+\subsection {Screen Images}
+Display screenshots showing the interface from the user s perspective. These can be  hand drawn
+or you can use an automated drawing tool. Just make them as accurate as possible.
+(Graph paper works well .)
+
+
+
+\section{Requirements Matrix}
+Provide a cross reference that traces components and data structures to the requirements in your SRS document.
+Use  a  tabular  format to show  which system  components satisfy each of the  functional 
+requirements from the SRS. Refer to the functional requirements by the numbers/codes that you gave them in the SRS.
+
+
+\section{APPENDICES}
+This section is optional.
+Appendices may be included, either directly or by reference, to provide supporting details that could 
+aid in the understanding of the Software Design Document.
+
+\section {References}
+\printbibliography
+
+\end{document}
