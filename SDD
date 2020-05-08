@@ -79,25 +79,39 @@ decisions. .\end{tabular} \\ \hline
 \end{table}
  
 \section{Project Overview}
-This paragraph shall briefly state the purpose of the system and the software to which this document applies. It shall describe the general nature of the system and software; identify the project sponsor, user, developer, and support agencies; identify current and planned operating sites.
-
+The outcome of this project is a Clinic software product that is used to assist patients in booking appointments effortlessly. This software collects data about the patients and their medical history, which helps the Doctor to get a better view of the Patients' case and view their medical history easily any time necessary. Therefore, offering accurate Diagnosis in less time and with less confusion. Moreover, this product shall offer better communication with the Dr and his Patients. The Doctor can write reports for his patients and keep them updated. On the other hand, Patients also have the ability to reach out to the Doctor's assistant using a chatting system, learning more about their case and the operations scheduled, if any.
 \subsection{Project Scope}
-A project scope,  outlines the procedures taken to deliver the desired system. It will not describe in details how the system works, but rather the tools and methods required to successfully deliver the specified features.
--Give a high-level description of the software including brief description of main features.\\
-
-- Explain the benefits of your project.\\
-- State The end results (a web application for xx...) that your project will deliver upon completion.\\
-- Provide any other background information if necessary.
-
+The project's target is to help Patients book appointments and assist the Dr to view his patients' data effortlessly. This target shall be reached using certain methods. These methods include offering the patient an easy way to fill his information and book his appointments in any time suitable for him without reaching out to receptionists. On the other hand, the receptionists shall be automatically notified when a patient books an appointment. Moreover the patients' data, including their medical history, shall be saved for the Dr to view easily any time. API tools shall also be used to offer a chatting system for the Patients and the Doctor's assistant to communicate. By successfully building these methods and making them function well, there shall be no more confusion with retrieving Patients' data and booking appointments. The patients and the Dr shall be updated with any new progress shortly and effortlessly.
 \subsection{Goals and objectives}
-- Write out a list of goals and objectives for your system\\
-Use the SMART approach to writing objectives as it helps lay the groundwork to make sure you have got everything you need.
-SMART is an acronym that stands for:\\
-S = Specific\\
-M = Measurable\\
-A = Achievable (or attainable, actionable, appropriate)\\
-R = Realistic\\
-T = Time-bound (or timely, traceable)\\
+\begin{enumerate}
+\item  The Patients shall be able to book appointments effortlessly.
+
+
+\item Receptionists and the Doctor shall be able to view appointments.
+
+
+\item The Patients shall be able to contact the Doctor's assistant through a chatting system.
+
+
+\item The Doctor shall be able to view Patients' medical history.
+
+
+\item The Doctor shall be able to add Reports concerning his Patients' cases.
+
+
+\item The Doctor shall be able to add an operation.
+
+
+\item The Doctor's assistant shall be able to schedule operations and contact patients.
+
+\item The admin shall be able to add staff, view appointments and manage everything concerning the system.
+
+\item The Patients shall be able to register into the system.
+
+\item The Patients and The Staff shall be able to login into the system, if verified, and shall be forwarded to their main pages.
+
+
+\end{enumerate}
 
 \subsection {Project Timeline}
 The overall time frame and major phases (milestones) along with deliverable for each phase.
