@@ -223,19 +223,54 @@ This viewpoint consists of a set of interface specifications for each entity. \\
 NOTE—User interfaces are addressed separately. 
 
 \section{Data Design}
-\subsection{Data Description}
-Explain how the information domain of your system is transformed into data structures. Describe how the major data or system entities are stored, processed and organized. \\
-You may consider the answer for the following questions:\\
-What is the original format of the data (paper based, excel files, old system database)?\\
-Identify the method used to capture the data into your system(web page forms, import documents etc..)?\\
-How large is the database expected to be (in numbers of rows and columns for the main entities)?\\
-What is the expected number of users/customers for the system?\\
-How is your entity keys(ids) constructed (is there a specific code or format for ID definition)?
-Does your data contain date/time, if yes which format are they presented in?
-You may provide data models such as Entity Relationship Diagram (ERD) in this section.
+\subsection{Data Dictionary}
 
+\begin{itemize}
+  \item Rtb option user type: the relation between the options the user types which is mainly the staff as Admin,doctor,assistant,receptionist.
+  \item Rtb  Payment : the table that contains the relations between the Payment Method ID and the description, where it saves the options ID required to be shown when selecting any kind of payment according to the appointment type.
+  \item Rtb appointments:the relation between the clinic ID from class clinics that is chosen and the patient's specific time slot that is booked.
+  \item Rtb patient's history: the relation between the patients and the doctor as the doctor is allowed to view every patients history to precisely wrote the report needed for this specific case.
+  
+  \item Tb clinics :stores the description and the id of each clinic branch.
+  \item Tb option payment values: the table that carries the values that each user has paid by a certain payment method.
+  \item Tb injections:saves the description and the price of the injection the doctor recommended to the patient.
+  \item Tb appointments: the appointments that happened and its amount and category each appointment also stores the day and the patient's id.
+  \item Tb day limit: that table that stores the day of appointments and the maximum limit of appointments for that specific day because it is dynamic and depends on the type of appointment that is reserved. 
+  \item Tb  staff: the email and hashed password for each user signed up on the system and his/her own profile details.
+  \item tb patients: storing the data of the patients while registering into the system.
+  \item 
+  \item Rtb operations: the table that contains the relation between the patient and the assistant that the assistant has the ability to add operations if needed to this specific patient.
+  \item Rtb operations type:the table that contains the relation between reports and operations that knows from tb reports if the doctor added an operation to this patient or not.
+  \item Rtb reports: the table that contains relation between the patient and the doctor as the doctor has the ability to generate a report to each patient with specific description according to his/her illness.
+  \item Tb reports: stores the date the report generated at, comments and the patient's ID.
+  \item Tb message: the email subject and content that system can send to clients.
+  \item Tb message type: determine either the message is via mail or SMS. 
+  \item Tb user type: all the staff types on the system and their IDs.
+  
+
+\end{itemize}
 \subsection{Database design description}
-Describe any databases (provide database schema diagram) and/or description of other data storage items.
+MySQL database to communicate with the database that is installed locally on the server.
+
+\subsubsection{ER diagram }
+\FloatBarrier
+\begin{figure}[h]
+\centering
+\includegraphics[width=10.5cm, height=12.5cm]{./ER CLINIC System.png}
+\label{label1}
+\end{figure}
+\FloatBarrier
+\newpage
+\subsubsection{Database schema}
+\FloatBarrier
+\begin{figure}[h]
+\centering
+\includegraphics[width=15cm, height=15.5cm]{./database clinic system.jpeg}
+\label{label1}
+\end{figure}
+\FloatBarrier
+\newpage
+
 
 \section{Human Interface Design}
 
