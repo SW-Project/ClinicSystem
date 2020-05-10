@@ -147,12 +147,29 @@ provide detailed description of your used architecture here such as MVC, layered
 Discuss the rationale for selecting the architecture described in section \ref{ss-logical} including critical issues
 and  trade/offs that were  considered. You  may discuss other  architectures that were 
 considered, provided that you explain why you didn't choose them.
-
 \subsection{Patterns use viewpoint}
-This viewpoint addresses design ideas focusing on the used design patterns. 
-UML class diagram and the UML package diagram can be used here to illustrate the used design patterns.\\
-\subsubsection{Design Rationale}
-You need to provide the design rationale for using these design patterns.
+\subsubsection{MVC design pattern}
+Clinic management system is build on MVC form. MVC is the separation of Model, View and Controller classes. Main advantage of MVC architecture is differentiating the layers of a project in Model,View and Controller for the Re-usability of code and better maintenance. MVC is applied in most of  the tables in out project.
+  Examples:
+  \begin{itemize}
+      \item Appointment
+      \item Reports
+      \item patients system
+      \item Notification system
+      
+  \end{itemize}
+\subsubsection{Singleton Design Pattern}
+Singleton design pattern is used to allow access to one and only one instance of a particular class. It provide global access the that single instance from anywhere. In our project we used singleton in connection to the database class which is the database helper class, so a single connection is made to the database by each user.
+
+\subsubsection{Observer Design Pattern}
+The Observer Design Pattern is used in the application for the notifications feature due to that we notify in different formats emails and SMS.
+
+\subsubsection{Decorator Design Pattern}
+The Decorator Design Pattern allow us to attach additional responsibilities to an object dynamically. Decorators provide a flexible alternative to sub-classing for extending functionality. We will use decorative in preparing the invoice outcome. As invoice depends on the patient's chooses, invoice will be out in different formats.
+
+\subsubsection{Facade Design Pattern}
+Facade pattern creates an easy use interface by hiding multiple interfaces in one class. we will use facade on all APIs used to hide the complexity of the code.
+
 
 \subsection{Composition viewpoint}
 Provide a decomposition of the subsystems in the architectural design. Supplement with text 
