@@ -177,8 +177,36 @@ as needed.
 provide subsystem model, package diagrams, generalization hierarchy diagram(s) (if any), aggregation hierarchy diagram(s) (if any).
 
 \subsection{Structure viewpoint}\label{Structure}
-The Structure viewpoint is used to document the internal organization of the system.
-Provide here a detailed UML class diagram of the system.
+\subsubsection{Class diagram}
+\begin{itemize}
+    \item  CRUD interface: This will contain the functions which draws the Forms and tables to contain the data of the users for viewing,searching,inserting, deleting and editing.
+    \item Login: In this part the files are meant to make the validations and verification on all the data inserted for protection and insurance during login.
+\end{itemize}
+\FloatBarrier
+\begin{figure}[h]
+\centering
+\includegraphics[width=15.5cm, height=11.5cm]{./clinic system-12.png}
+\label{label1}
+\end{figure}
+\FloatBarrier
+\newpage
+\subsubsection{process architecture}
+\FloatBarrier
+\begin{figure}[h]
+\centering
+\includegraphics[width=15.5cm, height=11.5cm]{./PROCESS ARCHITECTURE.png}
+\label{label1}
+\end{figure}
+\FloatBarrier
+\newpage
+
+
+\subsection{Interaction viewpoint}
+
+
+The following sequence diagrams shows briefly the actions taken to finish any process in our application. The sequence diagrams helps to depicts interaction between objects in a sequential order in each process on our system.
+
+\subsubsection{Admin Module}
 
 \subsection{Algorithm viewpoint}
 In this section, provide closer look at what each component does in a more systematic way. If you gave a functional description in section \ref{Structure}, provide a summary of your algorithm for each function listed in\ref{Structure} in procedural description language (PDL) or pseudo-code. If you gave an OO description, summarize each object member function for all the objects listed in \ref{Structure}.\\
