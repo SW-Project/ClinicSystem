@@ -38,45 +38,53 @@ sorting=ynt
 
 \begin{table}[htp]
 \begin{tabular}{cc}
-\thead{GitHub:}    & {........................................................}   
+\thead{GitHub:}    & {https://github.com/SW-Project/ClinicSystem/blob/master/SDD}   
 \end{tabular}
 \end{table}
 
 \section{Introduction}
 
 \subsection{Overview}
-Provide an overview of this document and its organization.
+
+The proposed software system will be made for a knee and orthopedic clinic. The system should be used by the clinic staff with all their roles. Also by the patients that will interact with the clinic. The system should make appointments to be easy for simple users. Also the system will manage the clinic's users, appointments, operations, notifications and reports.
+
+\FloatBarrier
+\begin{figure}[h]
+\centering
+\includegraphics[width=10.0cm, height=10.0cm]{./clinic block diagram.png}
+\label{label1}
+\end{figure}
+\FloatBarrier
+\newpage
 
 \subsection{Scope}
 
--Provide a description of the document scope such as:
- This software design description (SDD) describes xx..... system design and provides the main design viewpoints of the system to communicate to key design stakeholders. This SDD document is used to record design decision and their rationale in order to avoid disputes over what was previously agreed upon.\\
--provide full identification of the system and the software to which this document applies, including, as applicable, title(s), abbreviation(s), and version number(s).\\
+The scope of this document is to talk about the technicality of this software system.It will be an application for Dr ahmed ghoniem clinic. This system will be designed to help the clinic to have an easier system of appointment. A full database instead of paper usage and more faster way to manage the appointments ,generating reports and adding operations if necessary. More over, the system is designed to help the doctors to know the medical history of the patients and to access their reports easily .The system must be build in incremental model and agile model.
 
 \subsection{Purpose}
-A software design description (SDD) is a representation of a software design to be used for recording design information and communicating that design information to key design stakeholders \cite{IEEE09}.\\
-In this section identify the purpose of this software  design  description (SDD) and its intended audience. (e.g. This software  design  description (SDD) describes the architecture and system design of XX.. ).
+The purpose of software design document is to present detailed description of project system architecture and design. The document will explain the features of the clinic management system. Also, this document will help the project team and the customer to have a full overview about the interface and the functions of the project. The customer can review this document to be aware of the requirements that is finished.
+
 
 \subsection{Intended audience}
-Identify here the stakeholders that this SDD document is intended for.Describe any security or privacy considerations associated with the use of this SDD document.
+Mainly we have five stakeholders:
+\begin{itemize}
+  \item Admin
+  \item Receptionists
+  \item Doctor
+  \item Assistants
+  \item Patients
+  \end{itemize}
 
-\subsection{Definitions and Acronyms}
-This section is optional.
-Provide  definitions of all terms, acronyms, and  abbreviations that might exist to  properly 
-interpret the SDD. These definitions should be items used in the SDD that are most likely not 
-known to the audience.
+\subsection{ Abbreviations}
+\begin{itemize}
 
-\begin{table}[h]
-\begin{tabular}{|l|l|}
-\hline
-\multicolumn{1}{|c|}{\textbf{Term}} & \multicolumn{1}{c|}{\textbf{Definition}}                                                                                              \\ \hline
-Software Design Document (SDD)      & \begin{tabular}[c]{@{}l@{}}Used as the primary medium for communicating software \\ design information.\end{tabular}                  \\ \hline
-Design Entity                       & \begin{tabular}[c]{@{}l@{}}An element of a design that is structurally and functionally \\ distinct from other elements.\end{tabular} \\ \hline
-Design rationale                      & \begin{tabular}[c]{@{}l@{}}Information capturing the reasoning of the designer that \\led to the system as designed, including design options, \\trade-offs considered, decisions made, \\and the justifications of those
-decisions. .\end{tabular} \\ \hline
+\item SMS = Short Message Service
+\item ER=Entity Relationship diagram
+\item Tb=table
+\item Rtb=relation table
+\item API=application program interface
 
-\end{tabular}
-\end{table}
+\end{itemize}
  
 \section{Project Overview}
 The outcome of this project is a Clinic software product that is used to assist patients in booking appointments effortlessly. This software collects data about the patients and their medical history, which helps the Doctor to get a better view of the Patients' case and view their medical history easily any time necessary. Therefore, offering accurate Diagnosis in less time and with less confusion. Moreover, this product shall offer better communication with the Dr and his Patients. The Doctor can write reports for his patients and keep them updated. On the other hand, Patients also have the ability to reach out to the Doctor's assistant using a chatting system, learning more about their case and the operations scheduled, if any.
