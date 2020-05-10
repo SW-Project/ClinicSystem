@@ -125,8 +125,23 @@ The project's target is to help Patients book appointments and assist the Dr to 
 The overall time frame and major phases (milestones) along with deliverable for each phase.
 
 \section{ Context viewpoint}
-Provide a description of Systems services and users. 
-You can provide use case diagram and context diagram here.
+\subsection{Context Diagram}
+\FloatBarrier
+\begin{figure}[h]
+\centering
+\includegraphics[width=10.0cm, height=10.0cm]{./context diagram.png}
+\label{label1}
+\end{figure}
+\FloatBarrier
+\newpage
+\subsection{Use case scenario}
+\FloatBarrier
+\begin{figure}[h]
+\centering
+\includegraphics[width=15.0cm, height=10.0cm]{./Use case diagram.png}
+\label{label1}
+\end{figure}
+\FloatBarrier
 
 \section{System Architecture Design} \label{s-arch}
 
