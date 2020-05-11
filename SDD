@@ -20,7 +20,7 @@ sorting=ynt
 \addbibresource{bibliography.bib}
 
 %opening
-\title{Software design description for .... }
+\title{Software design document }
 \author{Sandra Fares, Nour Ghoniem, Samiha Hesham, Mariam Hesham}
 
 \begin{document}
@@ -88,8 +88,10 @@ Mainly we have five stakeholders:
  
 \section{Project Overview}
 The outcome of this project is a Clinic software product that is used to assist patients in booking appointments effortlessly. This software collects data about the patients and their medical history, which helps the Doctor to get a better view of the Patients' case and view their medical history easily any time necessary. Therefore, offering accurate Diagnosis in less time and with less confusion. Moreover, this product shall offer better communication with the Dr and his Patients. The Doctor can write reports for his patients and keep them updated. On the other hand, Patients also have the ability to reach out to the Doctor's assistant using a chatting system, learning more about their case and the operations scheduled, if any.
+
 \subsection{Project Scope}
 The project's target is to help Patients book appointments and assist the Dr to view his patients' data effortlessly. This target shall be reached using certain methods. These methods include offering the patient an easy way to fill his information and book his appointments in any time suitable for him without reaching out to receptionists. On the other hand, the receptionists shall be automatically notified when a patient books an appointment. Moreover the patients' data, including their medical history, shall be saved for the Dr to view easily any time. API tools shall also be used to offer a chatting system for the Patients and the Doctor's assistant to communicate. By successfully building these methods and making them function well, there shall be no more confusion with retrieving Patients' data and booking appointments. The patients and the Dr shall be updated with any new progress shortly and effortlessly.
+
 \subsection{Goals and objectives}
 \begin{enumerate}
 \item  The Patients shall be able to book appointments effortlessly.
@@ -121,8 +123,7 @@ The project's target is to help Patients book appointments and assist the Dr to 
 
 \end{enumerate}
 
-\subsection {Project Timeline}
-The overall time frame and major phases (milestones) along with deliverable for each phase.
+
 
 \section{ Context viewpoint}
 \subsection{Context Diagram}
@@ -142,26 +143,62 @@ The overall time frame and major phases (milestones) along with deliverable for 
 \label{label1}
 \end{figure}
 \FloatBarrier
+\newpage
 
-\section{System Architecture Design} \label{s-arch}
-
-\begin{figure}[tbh]
-\centering
-\includegraphics[width=0.7\linewidth]{./image}
-\caption{Architectural Design}
-\label{archdsgn}
+\section{System Architecture Design}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=15cm]{./Architecture Diagram.jpeg}
+    \caption{Software Architecture Diagram}
+    \label{fig:galaxy}
 \end{figure}
+\label{s-arch}
+
+
 
 \subsection{Logical viewpoint} \label{ss-logical}
-Write a  high level overview  of how responsibilities of the system were partitioned and then assigned to subsystems. Identify each high level subsystem and  the  roles or responsibilities assigned to it. 
-Describe  how  the subsystems collaborate with each other in order to achieve the desired functionality. Don t go into too much detail about the individual subsystems. The main purpose is to gain a general understanding  of how  and why the system was decomposed, and  how the  individual parts work together. Provide a diagram showing the major subsystems and data repositories and their interconnections. Describe the diagram if required.
 
-The purpose of the Logical viewpoint is to elaborate existing and designed types and their implementations as classes and interfaces with their structural static relationships. 
-provide detailed description of your used architecture here such as MVC, layered architecture. use figures such as in figure \ref{archdsgn}etc.
+Our system is divided into five models.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=12cm]{./Logical diagram (1).jpeg}
+    \caption{Logical Architecture Diagram}
+    \label{fig:galaxy}
+\end{figure}
+\begin{itemize}
+  \item Admin: The Admin is the owner of the system. He has the ability to add Staff and view their data, in addition to viewing everything in the system.
+  \item Receptionists: They are mainly responsible for viewing the appointments.
+  \item Doctor: The system gives the Dr. a lot of privileges, such as viewing appointments, adding reports, viewing Patients' medical history and view operations.
+  \item Assistants: The assistant's main job is to manage operations and contacting Patients through a chatting system.
+  \item Patients: The system gives a lot of privileges to Patients too. Some of the functionalities that the system provides to Patients include, booking appointments, viewing reports,and contacting the Doctor's assistant.
+  
+  
+\end{itemize}
+Our system is designed using the MVC architecture, which consists of three partitions: Model (Data access layer), View (Presentation Layer), and Controller (Controlling Layer).
+\begin{enumerate}
+\item Model Layer: Contains only the pure application data, it contains no logic describing how to present the data to a user. By means, it contains the functions which interact directly with the database.
+Example:
+\begin{itemize}
+\item CRUD: all the functions that are implemented for our users and objects (Create, Read, Update, Delete) deal with the model layer as our functions interact directly with the database.
+\end{itemize}
+\item View Layer: presents the model’s data to the user. The view knows how to access the model’s data, but it does not know what this data means or what the user can do to manipulate it. Simply, the view layer is concerned with what the users see on their screens.
+Example:
+\begin{itemize}
+\item Doctor's dashboard: it is the page that appears for the Doctor when he logs into the system.
+\end{itemize}
+\item Controller Layer: It is a mid layer. It exists between the view and the model. It listens to events triggered by the view and executes the appropriate reaction to these events. In most cases, the reaction is to call a method on the model.
+Example:
+\begin{itemize}
+\item Login: by getting the data entered by the user and checking into the database if the user exists or if the data are valid.
+\end{itemize}
+
+ 
+
+\end{enumerate}
 \subsubsection{Design Rationale}
-Discuss the rationale for selecting the architecture described in section \ref{ss-logical} including critical issues
-and  trade/offs that were  considered. You  may discuss other  architectures that were 
-considered, provided that you explain why you didn't choose them.
+MVC is a quite useful architecture to use for our system, as the system is huge. It will help us develop our system easily and in a simple way. Moreover, it helps us update our system easily if needed, making our system more flexible and reliable. It also makes it easier for multiple developers to work together, which is a great advantage in our case.
+
+
 \subsection{Patterns use viewpoint}
 \subsubsection{MVC design pattern}
 Clinic management system is build on MVC form. MVC is the separation of Model, View and Controller classes. Main advantage of MVC architecture is differentiating the layers of a project in Model,View and Controller for the Re-usability of code and better maintenance. MVC is applied in most of  the tables in out project.
@@ -179,17 +216,13 @@ Singleton design pattern is used to allow access to one and only one instance of
 \subsubsection{Observer Design Pattern}
 The Observer Design Pattern is used in the application for the notifications feature due to that we notify in different formats emails and SMS.
 
-\subsubsection{Decorator Design Pattern}
-The Decorator Design Pattern allow us to attach additional responsibilities to an object dynamically. Decorators provide a flexible alternative to sub-classing for extending functionality. We will use decorative in preparing the invoice outcome. As invoice depends on the patient's chooses, invoice will be out in different formats.
+
 
 \subsubsection{Facade Design Pattern}
 Facade pattern creates an easy use interface by hiding multiple interfaces in one class. we will use facade on all APIs used to hide the complexity of the code.
 
-
 \subsection{Composition viewpoint}
-Provide a decomposition of the subsystems in the architectural design. Supplement with text 
-as needed. 
-provide subsystem model, package diagrams, generalization hierarchy diagram(s) (if any), aggregation hierarchy diagram(s) (if any).
+to be continued
 
 \subsection{Structure viewpoint}\label{Structure}
 \subsubsection{Class diagram}
@@ -217,25 +250,59 @@ provide subsystem model, package diagrams, generalization hierarchy diagram(s) (
 
 
 \subsection{Interaction viewpoint}
+\subsubsection{Patient}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=17cm]{./Patient.jpeg}
+    \caption{Patient's Sequence Diagram}
+    \label{fig:galaxy}
+\end{figure}
+\begin{itemize}
+The Patients' sequence diagram shows the sequence of events that happen and appear to the Patient, once he logs into the system. If the Patient managed to successfully log into the system, the Patient's main page pops up, which has many options for the patient. If the Patient chose to book an appointment, the appointment page appears to him, so he can start booking. Once he's done booking, an invoice page appears to him. The Patient can also view Reports written to him by the Doctor from his main page. Once he chooses this option, a page appears with all his Reports. Moreover, the Patient can contact the assistant through the Services page, and be informed when the assistant replies to his message.
+\end{itemize}
+\newpage
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=17cm]{./Doctor (2).jpeg}
+    \caption{Doctor's Sequence Diagram}
+    \label{fig:galaxy}
+\end{figure}
+\begin{itemize}
+The Doctor's sequence diagram shows the sequence of events that happen and appear to The Doctor, once he logs into the system successfully. The first things that appears to the Doctor is that Doctor's dashboard that, like the Patients', has various alternative pages for the Doctor to choose from. If the Doctor wished to view appointments, the appointments page, which has all the appointment's for the day, will pop up to him. The Doctor can also open the Reports' page, which will allow him to add a Report for any Patient he chooses. Moreover, he can view Patients' histories and book operations, leading him to the pages required for each of them.
+\end{itemize}
+\newpage
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=19cm]{./Assistant final.jpeg}
+    \caption{Assistant's Sequence Diagram}
+    \label{fig:galaxy}
+\end{figure}
+\begin{itemize}
+\item The Assistant's sequence diagram shows the sequence of events that happen and appear to the Assistant, once he logs into the system successfully. The first things that appears to the Assistant is the Assistant's dashboard that, gives him the right to view the appointments, the histories of the Patients', and the Reports written by the Doctor. The Assistant can also chat with Patients through the chatting system and reply to their messages. Moreover, he can book operations for the Patients. For each of these options, appears a page for the Assistant work on.
+\end{itemize}
+\newpage
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=19cm]{./Admin.jpeg}
+    \caption{Admin's Sequence Diagram}
+    \label{fig:galaxy}
+\end{figure}
+\begin{itemize}
+\item The Admin's sequence diagram shows the sequence of events that happen and appear to the Admin, once he logs into the system successfully. The Admin's dashboard appears once he logs in. The Admin has the privilege of updating everything in the system including, Appointments, Patients' histories, Reports,and Operations. Moreover, he has the ability to add Staff and delete Patients.
+
+\end{itemize}
+\newpage
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=15cm]{./Receptionists.jpeg}
+    \caption{Receptionists' Sequence Diagram}
+    \label{fig:galaxy}
+\end{figure}
+\begin{itemize}
+\item The Receptionists' sequence diagram shows the sequence of events that happen and appear to the Receptionists, once he logs into the system successfully. The Receptionist's dashboard pops up, which has less options than the rest. The Receptionists' can only view appointments and view invoices, so they can print them to the Patients.
+\end{itemize}
 
 
-The following sequence diagrams shows briefly the actions taken to finish any process in our application. The sequence diagrams helps to depicts interaction between objects in a sequential order in each process on our system.
-
-\subsubsection{Admin Module}
-
-\subsection{Algorithm viewpoint}
-In this section, provide closer look at what each component does in a more systematic way. If you gave a functional description in section \ref{Structure}, provide a summary of your algorithm for each function listed in\ref{Structure} in procedural description language (PDL) or pseudo-code. If you gave an OO description, summarize each object member function for all the objects listed in \ref{Structure}.\\
-Decision tables and flowcharts; program design languages (PDL), “pseudo-code,” and (actual) programming languages may also be used. 
-
-\subsection{Interaction viewpoint}
-Provides description of Object communication, messaging using UML sequence diagrams
-
-
-\subsection{Interface viewpoint}
-The Interface viewpoint provides programmers, and testers the means to know how
-to correctly use the provided services. 
-This viewpoint consists of a set of interface specifications for each entity. \\
-NOTE—User interfaces are addressed separately. 
 
 \section{Data Design}
 \subsection{Data Dictionary}
@@ -286,31 +353,132 @@ MySQL database to communicate with the database that is installed locally on the
 \FloatBarrier
 \newpage
 
-
 \section{Human Interface Design}
 
 \subsection {User Interface}
-Describe the functionality of the system from the user s perspective. Explain  how the user 
-will be  able  to use  your system to complete  all the  expected  features and  the  feedback 
-information that will be displayed for the user.
+
+The proposed project allows the user to create an account. The system will allow the user to sign in with his account. The patient will choose which clinic branch he will book an appointment at.The system allows the clinic to have  accounts for every patient to be easier to contact with them.Also from the staff' side it will help the doctor to know the medical history and generate report to each patient to follow up with them.
 
 \subsection {Screen Images}
-Display screenshots showing the interface from the user s perspective. These can be  hand drawn
-or you can use an automated drawing tool. Just make them as accurate as possible.
-(Graph paper works well .)
+
+\FloatBarrier
+\begin{figure}[h]
+\centering
+\includegraphics[width=15.0cm, height=11.0cm]{./Home.png}
+\caption{Main Page of website the patient use it}
+\label{label1}
+\end{figure}
+\newpage
 
 
+\begin{figure}[h]
+\centering
+\includegraphics[width=15.0cm, height=11.0cm]{./regpatient2.jpeg}
+\caption{patient registration form}
+\label{label1}
+\end{figure}
+\newpage
+\begin{figure}[h]
+\centering
+\includegraphics[width=15.0cm, height=11.0cm]{./regpatient.jpeg}
+\caption{patient filling registration form}
+\label{label1}
+\end{figure}
+\newpage
+\begin{figure}[h]
+\centering
+\includegraphics[width=15.0cm, height=11.0cm]{./patientlogin.jpeg}
+\caption{patient logging in}
+\label{label1}
+\end{figure}
+\newpage
+\begin{figure}[h]
+\centering
+\includegraphics[width=15.0cm, height=11.0cm]{./patientlogin.jpeg}
+\caption{patient login with alert}
+\label{label1}
+\end{figure}
+\newpage
+\begin{figure}[h]
+\centering
+\includegraphics[width=15.0cm, height=11.0cm]{./2.jpeg}
+\caption{staff's login}
+\label{label1}
+\end{figure}
+\newpage
+\begin{figure}[h]
+\centering
+\includegraphics[width=15.0cm, height=11.0cm]{./patient3.jpeg}
+\caption{patient's dashboard }
+\label{label1}
+\end{figure}
+\newpage
+
+
+\vfill
+ \begin{figure}[h]
+ 
+ \begin{minipage}{.5\textwidth}
+  \includegraphics[width=15.0cm, height=10.0cm]{./reg1.png}
+  \caption{Patient's page}
+ \end{minipage}
+  \begin{minipage}{.5\textwidth}
+  \includegraphics[width=15.0cm, height=10.0cm]{./reg2.png}
+  \caption{Staff's page}
+ \end{minipage}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=15.0cm, height=12.0cm]{./Dr.png}
+\caption{Doctor's dashboard}
+\label{label1}
+\end{figure}
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=15.5cm, height=10.0cm]{./b1.jpeg}
+\caption{Booking Page}
+\label{label1}
+\end{figure}
+
+\newpage
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=15.5cm, height=10.0cm]{./time.jpeg}
+\caption{Appointment Page}
+\label{label1}
+\end{figure}
+
+
+\newpage
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=15.5cm, height=10.0cm]{./admin.png}
+\caption{Admin Page}
+\label{label1}
+\end{figure}
+
+\newpage
+
+\FloatBarrier
 
 \section{Requirements Matrix}
-Provide a cross reference that traces components and data structures to the requirements in your SRS document.
-Use  a  tabular  format to show  which system  components satisfy each of the  functional 
-requirements from the SRS. Refer to the functional requirements by the numbers/codes that you gave them in the SRS.
 
 
-\section{APPENDICES}
-This section is optional.
-Appendices may be included, either directly or by reference, to provide supporting details that could 
-aid in the understanding of the Software Design Document.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=15.5cm, height=10.0cm]{./section7.jpeg}
+\caption{matricies}
+\label{label1}
+\end{figure}
+
 
 \section {References}
 \bibliographystyle{IEEEtranS}
@@ -321,5 +489,6 @@ aid in the understanding of the Software Design Document.
 \bibitem{[2]}
 [Online] Creately Templates, "Online Clinic Reservation System - Context Diagram ( Data Flow Diagrams(YC))", Creately, Available at: https://creately.com/diagram/example/intvotax1/OnlineClinicReservationSystem-ContextDiagram, Accessed:10/05/2020
 \end{thebibliography}
+
 
 \end{document}
