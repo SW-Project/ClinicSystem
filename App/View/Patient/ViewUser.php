@@ -1,7 +1,7 @@
 
 <?php
 require_once(__ROOT__ . "View/Patient/View.php");
-class ViewUser extends View{	
+class ViewUser extends View{
 	public function output(){
 
 		$str1="";
@@ -78,10 +78,10 @@ class ViewUser extends View{
 
 	  </nav>";
 
-	
+
 	return $str1;
 }
-public function topnav()
+ function topnav()
 {
 	$str="";
 	$str.="
@@ -116,9 +116,10 @@ public function topnav()
 								<li><a href='Report.html' class='drop-text active'>Reports </a></li>
 								<li><a href='Operation.html' class='drop-text'>Operations</a></li>
 								<li><a href='Exercise.html' class='drop-text'>Exercise</a></li>
+								<li><a href='Logout.php' class='drop-text'>Logout</a></li>
 							</ul>
 						</li>
-						<li class='mx-lg-4 mx-md-3 my-md-0 my-1'><a href='Booking2.html'>Booking</a></li>
+						<li class='mx-lg-4 mx-md-3 my-md-0 my-1'><a href='Booking.php'>Booking</a></li>
 					  <li class='mx-lg-4 mx-md-3 my-md-0 my-2'><a href='contact.html'>Contact us</a></li>
 
 
@@ -150,7 +151,7 @@ function loginForm(){
 					<input type="password" class="form-control" name="password" placeholder="Enter your Password" required="">
 				</div>
 				<button type="submit" name= "login" class="btn submit mt-4">Login</button>
-				
+
 				</p>
 				 </form>
 		</div>
@@ -167,7 +168,7 @@ $str='
 				<div class="form-group ">
                 <label>UserName:</label>
 				  <input class="form-control " type="text" name="Uname" onkeyup=".$this->model->getUname()" required="" />
-				 
+
 
 
 				<label>First Name:</label>
@@ -237,13 +238,13 @@ $str='
 			<div class="form-group ">
 			<label>UserName:</label>';
 	$str.='<input class="form-control " type="text" name="Uname"   required="" value="'.$this->model->getUname().'"/>
-			 
+
        <label>First Name:</label>
 			<input class="form-control " type="text" name="Fname" required="" value="'.$this->model->getFname().'"/>
 			<label>Middle Name:</label>
 			<input class="form-control" type="text" name="Mname" required="" value="'.$this->model->getMname().'"/>
 			<label>Last Name:</label>
-			 <input class="form-control" type="text" name="Lname" required="" value="'.$this->model->getLname().'"/> 
+			 <input class="form-control" type="text" name="Lname" required="" value="'.$this->model->getLname().'"/>
 			<label>Email:</label>
 			<input class="form-control" type="email" name="email"  value="'.$this->model->getemail().'"/>
 
@@ -253,7 +254,7 @@ $str='
 
 
 			<label>Mobile:</label>
-			<input class="form-control" type="text" name="mobile" required=""  value="'.$this->model->getmobile().'"/> 
+			<input class="form-control" type="text" name="mobile" required=""  value="'.$this->model->getmobile().'"/>
 
 
 				<label for="gender">Gender</label>
@@ -295,6 +296,66 @@ $str='
 
 ';
 	return $str;
+}
+public function ViewBook()
+{
+	$str="div class='container py-xl-5 py-lg-3'>
+	<div class='container py-xl-5 py-lg-3'>
+		<div class='title-section mb-md-5 mb-4'>
+	<h3 class='w3ls-title text-uppercase text-dark font-weight-bold'>Book Your Appoitment Now</h3>
+	 <label>For Help Call : 01150001410</label>
+		</div>
+<div class='login px-sm-4 mx-auto mw-100 login-wrapper'>
+<form class='login-wrapper' action='#' method='post'>
+	 <div class='form-group'>
+	 <input type='text' placeholder='Enter your id' class='form-control'>
+  <br>
+		<input type='text' placeholder='Enter Full name' class='form-control'>
+ <br>
+ <input type='text' placeholder='Enter Mobile Number' class='form-control'>
+<br>
+				<label>Which Clinic:</label>
+			 <select  placeholder='which clinic' name='clinic' class='form-control'>
+		   <option value='New Cairo'>----------------------------------Clinics-------------------------------</option>
+				<option value='New Cairo'>New Cairo</option>
+				<option value='Maadi'>Maadi</option>
+				<option value='Manial'>Manial</option>
+				</select>
+   <br>
+	 <label>Reasons For Seeing the Doctor:</label>
+	  <select  placeholder='Reason For seeing Doctor' name='Reasons' class='form-control'>
+		<option value='New Cairo'>-----------------------------------Reasons-------------------------------</option>
+		<option value='New Cairo'>Left Knees</option>
+		<option value='Maadi'>Both Knees</option>
+		<option value='Manial'>Right Knees</option>
+		</select>
+		<br>
+	 <input type='date' placeholder='Enter Date' name='appointmentdate' list='appointmentdateslist' class='form-control'>
+		 <datalist id='appointmentdateslist' >
+		 <option value='2020-04-01'>
+				<option value='2020-04-02'>
+	  <option value='2020-04-03'>
+				<option value='2015-05-26'>
+				</datalist>
+		<br>
+				<input type='date' placeholder='Enter time' list='appointmenttimelist' class='form-control'>
+	  <datalist id='appointmenttimelist'>
+	  <option value='7:00'>
+	  <option value='7:30'>
+			   <option value='8:00'>
+				<option value='8:30'>
+	  </datalist>
+<br>
+			  <button type='submit' form='form1' value='Submit'>Submit</button>
+<br>
+				</div>
+
+									</div>
+	</div>
+		</div>
+		</form>
+	</div>
+	</div>";
 }
 
 
