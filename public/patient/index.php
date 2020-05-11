@@ -8,30 +8,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 define('__ROOT__', "../App/");
 require_once(__ROOT__ . "model/PatientsModel.php");
-require_once(__ROOT__ . "Controller/PatientController.php");
+require_once(__ROOT__ . "controller/PatientController.php");
+require_once(__ROOT__ . "View/Patient/ViewUser.php");
 
-
-$model = new Patients();
+session_start();
+$model = new Patient($_SESSION["PID"]);
 $controller = new PatientsController($model);
-//$view = new Viewreg($controller, $model);
+$view = new ViewUser($controller, $model);
 
-if (isset($_GET['action']) && !empty($_GET['action'])) {
-	$controller->{$_GET['action']}();
-}
 
-if(isset($_POST['login']))	{
-	$name=$_REQUEST["name"];
-	$password=$_REQUEST["password"];
-	$sql = "SELECT * FROM Patients where Uname='$username' and password='$pass'";
-	$dbh = new Db();
-	$result = $dbh->query($sql);
-	if ($result->num_rows == 1){
-		$row = $dbh->fetchRow();
-		$_SESSION["ID"]=$row["PID"];
-		$_SESSION["Name"]=$row["userame"];
-		header("Location:profile.php");
-	}
-}
+
 ?>
 <!DOCTYPE html>
 <html lang="zxx">
@@ -69,114 +55,24 @@ if(isset($_POST['login']))	{
 	<link href="//fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
 	<link href="//fonts.googleapis.com/css?family=Mukta:200,300,400,500,600,700,800&amp;subset=devanagari,latin-ext" rel="stylesheet">
 	<!-- //Web-Fonts -->
+
 </head>
+
 
 <body>
 	<!-- main -->
 	<div id="home">
 		<!-- top header -->
 		<header>
-			<div class="top-bar py-3">
-				<div class="container">
-					<div class="row">
-						<div class="col-xl-5 col-lg-6 col-md-8 top-social-agile text-lg-left text-center">
-							<div class="row">
-
-
-								<!-- social icons -->
-								<ul class="col-4 top-right-info">
-									<li>
-										<a href="https://www.facebook.com/kneeinjury/">
-											<span class="fa fa-facebook-f"></span>
-										</a>
-									</li>
-									<li>
-										<a href="m.me/kneeinjury">
-											<p><i class="fab" style="font-size:15px"> &#xf39f; </i></p>
-										</a>
-									</li>
-									<li class="mx-3">
-										<a href="https://www.youtube.com/channel/UCWoWydNtA65jsai0wQ0ErrA">
-											<span class="fa fa-youtube"></span>
-										</a>
-									</li>
-									<li>
-										<a href="https://instagram.com/drghonam?igshid=q9g4mht43lx1">
-											<span class="fa fa-instagram"></span>
-										</a>
-									</li>
-
-
-								</ul>
-								<!-- //social icons -->
-							</div>
-						</div>
-						<div class="col-xl-7 col-lg-6 col-md-4 top-social-agile text-md-right text-center mt-md-0 mt-2">
-							<div class="row">
-								<div class="offset-xl-6 offset-lg-4">
-								</div>
-								<div class="col-xl-3 col-lg-4 col-6 top-w3layouts p-md-0 text-right">
-									<!-- login -->
-									<a href="login.php" class="login-button-2 text-uppercase text-bl">
-										<span class="fa fa-sign-in mr-2"></span>Login</a>
-									<!-- //login -->
-								</div>
-								<div class="col-xl-3 col-lg-4 col-6 header-w3layouts text-md-right text-left">
-									<!-- register -->
-									<a href="register.php" class="login-button-2 text-uppercase text-bl">
-										<span class="fa fa-pencil-square-o mr-2"></span>Register</a>
-									<!-- //register -->
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+		<?php  echo $view->output();?>
 		</header>
 		<!-- //top header -->
 
 		<!-- second header -->
 		<div class="main-top">
-			<div class="container">
-				<div class="header d-md-flex justify-content-between align-items-center py-3">
-					<!-- logo -->
-					<div id="logo">
-						<h1>
-							<a href="index.html">
-								<span class="fa fa-user-md mr-2"></span>
-								<span class="logo-sp"></span> Dr. Ahmed Ghoniem Clinic
-							</a>
-						</h1>
-					</div>
-					<!-- //logo -->
-					<!-- nav -->
-					<div class="nav_w3ls">
-						<nav>
-							<label for="drop" class="toggle">Menu</label>
-							<input type="checkbox" id="drop" />
-							<ul class="menu">
-								<li><a href="index.html">Home</a></li>
-								<li class="mx-lg-4 mx-md-3 my-md-0 my-2"><a href="about.html">About Us</a></li>
-								<li><a href="gallery.html">Gallery</a></li>
-								<li class="mx-lg-4 mx-md-3 my-md-0 my-2">
-									<!-- First Tier Drop Down -->
-									<label for="drop-2" class="toggle toogle-2">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span>
-									</label>
-									<a href="#" class="active">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span></a>
-									<input type="checkbox" id="drop-2" />
-									<ul>
-										<li><a href="about.html" class="drop-text">Services</a></li>
-										<li><a href="single.html" class="drop-text active">Blog </a></li>
-										<li><a href="about.html" class="drop-text">Our Doctor</a></li>
-									</ul>
-								</li>
-								<li><a href="contact.html">Contact Us</a></li>
-							</ul>
-						</nav>
-					</div>
-					<!-- //nav -->
-				</div>
-			</div>
+			
+		<?php 
+		 echo $view->topnav();?>
 		</div>
 		<!-- //second header -->
 
