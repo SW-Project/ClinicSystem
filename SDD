@@ -313,6 +313,13 @@ Appendices may be included, either directly or by reference, to provide supporti
 aid in the understanding of the Software Design Document.
 
 \section {References}
-\printbibliography
+\bibliographystyle{IEEEtranS}
+\begin{thebibliography}{10}
+\bibitem{[1]}
+[Online] Ros, Fabian, "Hospital Management System using PHP with Source Code", 01 2018, Source Code and Projects, Available at: https://code-projects.org/hospital-management-system-using-php-source-code/, Accessed:03/05/2020
+
+\bibitem{[2]}
+[Online] Creately Templates, "Online Clinic Reservation System - Context Diagram ( Data Flow Diagrams(YC))", Creately, Available at: https://creately.com/diagram/example/intvotax1/OnlineClinicReservationSystem-ContextDiagram, Accessed:10/05/2020
+\end{thebibliography}
 
 \end{document}
