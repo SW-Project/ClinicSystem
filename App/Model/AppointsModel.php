@@ -156,11 +156,29 @@ function showAppointments()
 			return $result;
 		}
 		else {
-			return false;
+			die("No Appointments For Today");
 		}
 	
 		
 } 
+	function showAppointments1(){
+   $sql="SELECT appointments.appointment_id,
+    appointments.PID, appointments.reasons,
+     schedule.Days, schedule.App_Date, day_limit.App_time,
+      clinics.Cname, pay_type.Description FROM appointments,
+       day_limit, schedule, pay_type, clinics WHERE appointments.Day_id=day_limit.Day_id
+        AND clinics.CID=day_limit.CID AND appointments.Pay_type=pay_type.Pay_type_id AND 
+        schedule.Sch_id= day_limit.Sch_id
+";
+ $result=$this->db->query($sql);
+	
+	if ($result->num_rows > 0){
+			return $result;
+		}
+		else {
+			return false;
+		}
+	}
 
 
 }
