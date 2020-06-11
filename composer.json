@@ -17,4 +17,8 @@
 		"bin/heroku-php-apache2",
 		"bin/heroku-php-nginx"
 	]
+	 "post-install-cmd": [
+     "php artisan clear-compiled",
+     "chmod -R 777 public/"
+ ]
 }
