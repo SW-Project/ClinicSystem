@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,17 +10,14 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Receptionist </title>
+  <title>Admin Page</title>
 
-  <!-- Custom fonts for this template -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <!-- Custom fonts for this template-->
+  <link href="http://localhost/SW/lib/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
-  <!-- Custom styles for this template -->
+  <!-- Custom styles for this template-->
   <link href="http://localhost/SW/lib/css/sb-admin-2.min.css" rel="stylesheet">
-
-  <!-- Custom styles for this page -->
-  <link href="http://localhost/SW/lib/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
@@ -41,19 +39,37 @@
 
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
-
-      <!-- Nav Item - Dashboard -->
-
-
-
-
-      <!-- Nav Item - Tables -->
-      <li class="nav-item active">
-        <a class="nav-link" href="tables.html">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Today's Appoitments</span></a>
-      </li>
-
+            <!-- Nav Item - Tables -->
+            <li class="nav-item active">
+              <a class="nav-link" href="Admin.html">
+                <i class="fas fa-fw fa-table"></i>
+                <span>Add Staff</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="tables.html">
+                <i class="fas fa-fw fa-table"></i>
+                <span>Edit Appoitments</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="tables.html">
+                <i class="fas fa-history"></i>
+                <span>Edit Histories</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="tables.html">
+                <i class="far fa-sticky-note"></i>
+                <span>Edit Reports</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="tables.html">
+                <i class="fas fa-cut"></i>
+                <span>Edit Operations</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="tables.html">
+                <i class="fas fa-user"></i>
+                <span>Edit Patients</span></a>
+            </li>
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
 
@@ -114,20 +130,62 @@
               </div>
             </li>
 
+            <!-- Nav Item - Alerts -->
+            <li class="nav-item dropdown no-arrow mx-1">
+              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-bell fa-fw"></i>
+                <!-- Counter - Alerts -->
+                <span class="badge badge-danger badge-counter">3+</span>
+              </a>
+              <!-- Dropdown - Alerts -->
+              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+                <h6 class="dropdown-header">
+                  Alerts Center
+                </h6>
 
+                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+              </div>
+            </li>
 
+            <!-- Nav Item - Messages -->
+            <li class="nav-item dropdown no-arrow mx-1">
+              <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-envelope fa-fw"></i>
+                <!-- Counter - Messages -->
+                <span class="badge badge-danger badge-counter">7</span>
+              </a>
+              <!-- Dropdown - Messages -->
+              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
+                <h6 class="dropdown-header">
+                  Message Center
+                </h6>
+
+                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+              </div>
+            </li>
+
+            <div class="topbar-divider d-none d-sm-block"></div>
 
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Receptionist</span>
-                <img class="img-profile rounded-circle" src="http://localhost/SW/images/user1.png">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
+                <img class="img-profile rounded-circle" src="http://localhost/SW/lib/images/user1.png">
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="#">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Profile</a>
+                  Profile
+                </a>
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Settings
+                </a>
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Activity Log
+                </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -145,83 +203,7 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Tables</h1>
 
-
-          <!-- DataTales Example -->
-          <div class="card shadow mb-4">
-            <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary"> Example</h6>
-            </div>
-            <div class="card-body">
-              <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <thead>
-                    <tr>
-                      <th>Id</th>
-                      <th>Name</th>
-                      <th>Case</th>
-                      <th>Type of Appoitnment</th>
-                      <th>Appoitment Time</th>
-                      <th>Other</th>
-                    </tr>
-                  </thead>
-
-                  <tbody>
-                    <tr>
-                     <td>1001</td>
-                      <td>Tiger Nixon</td>
-                      <td>Left Knee</td>
-                      <td>Examination</td>
-                      <td>2020/03/25 7:00</td>
-                      <td><a href="#">view</a></td>
-                    </tr>
-                    <tr>
-                      <td>1200</td>
-                      <td>Garrett Winters</td>
-                      <td>Both knees</td>
-                      <td>Examination</td>
-                      <td>2020/03/25 7:30</td>
-                      <td><a href="#">view</a></td>
-                    </tr>
-                    <tr>
-                      <td>2100</td>
-                      <td>Ashton Cox</td>
-                      <td>Right Knee</td>
-                      <td>Examination</td>
-                      <td>2020/03/25 8:00</td>
-                      <td><a href="#">view</a></td>
-                    </tr>
-                    <tr>
-                      <td>1006</td>
-                      <td>Cedric Kelly</td>
-                      <td>Right knee</td>
-                      <td>Examination</td>
-                      <td>2020/03/25 8:30</td>
-                      <td><a href="#">view</a></td>
-                    </tr>
-                    <tr>
-                      <td>400</td>
-                      <td>Airi Satou</td>
-                      <td>Both knees</td>
-                      <td>fellow up</td>
-                      <td>2020/03/25 9:00</td>
-                      <td><a href="#">view</a></td>
-                    </tr>
-                    <tr>
-                      <td>602</td>
-                      <td>Brielle Williamson</td>
-                      <td>Left knee</td>
-                      <td>fellow up</td>
-                      <td>2020/03/25 9:30</td>
-                      <td><a href="#">view</a></td>
-                    </tr>
-
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
 
         </div>
         <!-- /.container-fluid -->
@@ -278,13 +260,6 @@
 
   <!-- Custom scripts for all pages-->
   <script src="http://localhost/SW/lib/js/sb-admin-2.min.js"></script>
-
-  <!-- Page level plugins -->
-  <script src="http://localhost/SW/lib/vendor/datatables/jquery.dataTables.min.js"></script>
-  <script src="http://localhost/SW/lib/vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
-  <!-- Page level custom scripts -->
-  <script src="http://localhost/SW/lib/js/demo/datatables-demo.js"></script>
 
 </body>
 
