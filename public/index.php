@@ -6,7 +6,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <?php
 
-define('__ROOT__', "../App/");
+define('__ROOT__', "../app/App/");
 require_once(__ROOT__ . "model/PatientsModel.php");
 require_once(__ROOT__ . "controller/PatientController.php");
 require_once(__ROOT__ . "View/Patient/ViewUser.php");
