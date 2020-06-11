@@ -1,0 +1,48 @@
+<?php
+
+require_once(__ROOT__ . "controller/Controller.php");
+class AppointmentController extends Controller{
+
+
+   public function insert() {
+	
+    $PID=$_SESSION["PID"];
+	$Day_ID=$_REQUEST["Day"];
+   $Reasons=$_REQUEST["Reasons"];
+   if(!$Reasons)
+   {
+      $Reasons="";
+   }
+   $Pay=$_REQUEST["Payment"];
+   if($Pay=="Cash")
+   {
+      $Payment='1';
+
+   }
+   if($Pay=="Visa")
+   {
+      $Payment='2';
+   }
+   
+
+   $this->model-> AddAppointmnet($PID,$Day_ID,$Reasons,$Payment);
+
+}
+public function insertCheck() {
+	
+  $PID=$_SESSION["PID"];
+  $Day_ID=$_REQUEST["Day"];
+  $Reasons="Check";
+  $Payment="0";
+  $this->model-> AddAppointmnet($PID,$Day_ID,$Reasons,$Payment);
+
+}
+public function Delete() {
+	
+   $app_id=$_GET["del"];
+   $this->model-> Delete($app_id);
+ 
+ }
+
+}
+?>
