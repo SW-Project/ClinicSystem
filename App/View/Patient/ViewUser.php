@@ -5,7 +5,9 @@ class ViewUser extends View{
 	public function output(){
 
 		$str1="";
-		$str1.="    <nav class='navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow'>
+		$str1.="    
+		
+		<nav class='navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow'>
 
 
 		<!-- Topbar Navbar -->
@@ -16,6 +18,7 @@ class ViewUser extends View{
 			<a class='nav-link dropdown-toggle' href='#' id='searchDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
 			  <i class='fas fa-search fa-fw'></i>
 			</a>
+			
 			<!-- Dropdown - Messages -->
 			<div class='dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in' aria-labelledby='searchDropdown'>
 			  <form class='form-inline mr-auto w-100 navbar-search'>
@@ -29,14 +32,23 @@ class ViewUser extends View{
 				</div>
 			  </form>
 			</div>
-		  </li>";
+			
+		  </li>
+		  <li>
+			<div class='col-sm-3 col-sm-3 col-3 top-w3layouts p-md-0 text-right'>
+		<!-- login -->
+		<a href='Logout.php' class='login-button-2 text-uppercase text-bl'>
+			<span class='fa fa-sign-out mr-2'></span>Logout</a>
+		  <!-- //login -->
+		  </div>
+			</li>";
 
 		  $str1.="     <!-- Nav Item - Alerts -->
+		 
 		  <li class='nav-item dropdown no-arrow mx-1'>
+			 
 			<a class='nav-link dropdown-toggle' href='#' id='alertsDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
 			  <i class='fas fa-bell fa-fw'></i>
-			  <!-- Counter - Alerts -->
-			  <span class='badge badge-danger badge-counter'>3+</span>
 			</a>
 			<!-- Dropdown - Alerts -->
 			<div class='dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in' aria-labelledby='alertsDropdown'>
@@ -53,7 +65,7 @@ class ViewUser extends View{
 			<a class='nav-link dropdown-toggle' href='#' id='messagesDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
 			  <i class='fas fa-envelope fa-fw'></i>
 			  <!-- Counter - Messages -->
-			  <span class='badge badge-danger badge-counter'>7</span>
+			  
 			</a>
 			<!-- Dropdown - Messages -->
 			<div class='dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in' aria-labelledby='messagesDropdown'>
@@ -72,11 +84,15 @@ class ViewUser extends View{
 			$str1.="  <img class='img-profile rounded-circle' width='50' height='50' src='http://localhost/SW/lib/images/user1.png' >
 			</a>
 			</div>
+			
+			  
 		  </li>
 
-		</ul>
 
-	  </nav>";
+		</ul>
+	
+	  </nav>
+	  ";
 
 
 	return $str1;
@@ -91,7 +107,7 @@ class ViewUser extends View{
 			<!-- logo -->
 			<div id='logo'>
 				<h1>
-					<a href='index.html'>
+					<a href='index.php'>
 						<span class='fa fa-user-md mr-2'></span>
 						<span class='logo-sp'></span>Dr. Ahmed Clinic
 					</a>
@@ -103,24 +119,23 @@ class ViewUser extends View{
 					<input type='checkbox' id='drop' />
 					<ul class='menu'>
 					   <li><a href='http://localhost/SW/Public/Profile.php'>Profile</a></li>
-						<li><a href='http://localhost/SW/Public/Patient.php'>Home</a></li>
-						<li class='mx-lg-4 mx-md-3 my-md-0 my-2'><a href='about.html'>About Us</a></li>
-						<li><a href='gallery.html'>Gallery </a></li>
-						<li class='mx-lg-4 mx-md-3 my-md-0 my-2'>
-							<label for='drop-2' class='toggle toogle-2'>Services <span class='fa fa-angle-down' aria-hidden='true'></span>
+						<li class='mx-lg-4 mx-md-3 my-md-0 my-2'><a href='about.php'>About Us</a></li>
+						<li><a href='gallery.php'>Gallery </a></li>
+						
+						<li class='mx-md-4 mx-md-3 my-md-0 my-1'><a href='Booking.php'>Booking</a></li>
+					  <li class='mx-md-4 mx-md-3 my-md-0 my-2'><a href='contact.php'>Contact us</a></li>
+					  <li class='mx-md-4 mx-md-3 my-md-0 my-2'>
+							<label for='drop-2' class='toggle toogle-2'>More <span class='fa fa-angle-down' aria-hidden='true'></span>
 							</label>
 							<a href='#' class='active'>Services <span class='fa fa-angle-down' aria-hidden='true'></span></a>
 							<input type='checkbox' id='drop-2' />
 							<ul>
-								<li><a href='PatientHistory.php' class='drop-text'>Medical History</a></li>
-								<li><a href='Report.html' class='drop-text active'>Reports </a></li>
-								<li><a href='Operation.html' class='drop-text'>Operations</a></li>
-								<li><a href='Exercise.html' class='drop-text'>Exercise</a></li>
-								<li><a href='Logout.php' class='drop-text'>Logout</a></li>
+								<li><a href='ShowApp.php' class='drop-text active'>Appointments </a></li>
+								<li><a href='Report.php' class='drop-text active'>Reports </a></li>
+								<li><a href='Operation.php' class='drop-text'>Operations</a></li>
+								
 							</ul>
 						</li>
-						<li class='mx-lg-4 mx-md-3 my-md-0 my-1'><a href='Booking.php'>Booking</a></li>
-					  <li class='mx-lg-4 mx-md-3 my-md-0 my-2'><a href='contact.html'>Contact us</a></li>
 
 
 					</ul>
@@ -143,8 +158,8 @@ function loginForm(){
 		<div class="login px-sm-4 mx-auto mw-100 login-wrapper">
 			<form class="login-wrapper" action="login.php" method="post">
 				<div class="form-group">
-					<label>ID</label>
-					<input type="text" class="form-control" name="id" placeholder="Enter your ID or Username" required="">
+					<label>Username</label>
+					<input type="text" class="form-control" name="username" placeholder="Enter your Username" required="">
 			   </div>
 				<div class="form-group">
 					<label>Password</label>
@@ -167,7 +182,7 @@ $str='
 			<form action="register.php?action=insert" method="post" name="" >
 				<div class="form-group ">
                 <label>UserName:</label>
-				  <input class="form-control " type="text" name="Uname" onkeyup=".$this->model->getUname()" required="" />
+				  <input class="form-control " type="text" name="Uname"  required="" />
 
 
 
@@ -182,11 +197,11 @@ $str='
 
 
 				<label>Password:</label>
-				<input class="form-control" type="password" name="password" required="" />
+				<input class="form-control" type="password" name="password" required="" minlength="8" maxlength="16"/>
 
 
 				<label>Mobile:</label>
-				<input class="form-control" type="text" name="mobile" required="" />
+				<input class="form-control" type="text" name="mobile" required="" size="11"  minlength="11" maxlength="11" />
 
 
 					<label for="gender">Gender</label>
@@ -198,7 +213,7 @@ $str='
 							</select>
 
         <label for="address">Birthdate </label>
-			 <input type="text" class="form-control " name="Day" placeholder="Day"/>
+			 <input type="number" class="form-control " name="Day" placeholder="Day"  min="1" max="31 required"/>
 
 		 <label for="Month">Month</label>
 		  <select class="form-control " name="Month"/>
@@ -216,7 +231,7 @@ $str='
 							 <option value="November">November</option>
 				 		  <option value="January">December</option></select>
 
-			<input type="text" class="form-control " name="Year" placeholder="Year"/>
+			<input type="number" class="form-control " name="Year" placeholder="Year"  min="1920" max="1999" required/>
 
 			  <button type="submit" name="submit" class="btn btn-primary">Sign Up</button>
 
@@ -297,69 +312,12 @@ $str='
 ';
 	return $str;
 }
-public function ViewBook()
-{
-	$str="div class='container py-xl-5 py-lg-3'>
-	<div class='container py-xl-5 py-lg-3'>
-		<div class='title-section mb-md-5 mb-4'>
-	<h3 class='w3ls-title text-uppercase text-dark font-weight-bold'>Book Your Appoitment Now</h3>
-	 <label>For Help Call : 01150001410</label>
-		</div>
-<div class='login px-sm-4 mx-auto mw-100 login-wrapper'>
-<form class='login-wrapper' action='#' method='post'>
-	 <div class='form-group'>
-	 <input type='text' placeholder='Enter your id' class='form-control'>
-  <br>
-		<input type='text' placeholder='Enter Full name' class='form-control'>
- <br>
- <input type='text' placeholder='Enter Mobile Number' class='form-control'>
-<br>
-				<label>Which Clinic:</label>
-			 <select  placeholder='which clinic' name='clinic' class='form-control'>
-		   <option value='New Cairo'>----------------------------------Clinics-------------------------------</option>
-				<option value='New Cairo'>New Cairo</option>
-				<option value='Maadi'>Maadi</option>
-				<option value='Manial'>Manial</option>
-				</select>
-   <br>
-	 <label>Reasons For Seeing the Doctor:</label>
-	  <select  placeholder='Reason For seeing Doctor' name='Reasons' class='form-control'>
-		<option value='New Cairo'>-----------------------------------Reasons-------------------------------</option>
-		<option value='New Cairo'>Left Knees</option>
-		<option value='Maadi'>Both Knees</option>
-		<option value='Manial'>Right Knees</option>
-		</select>
-		<br>
-	 <input type='date' placeholder='Enter Date' name='appointmentdate' list='appointmentdateslist' class='form-control'>
-		 <datalist id='appointmentdateslist' >
-		 <option value='2020-04-01'>
-				<option value='2020-04-02'>
-	  <option value='2020-04-03'>
-				<option value='2015-05-26'>
-				</datalist>
-		<br>
-				<input type='date' placeholder='Enter time' list='appointmenttimelist' class='form-control'>
-	  <datalist id='appointmenttimelist'>
-	  <option value='7:00'>
-	  <option value='7:30'>
-			   <option value='8:00'>
-				<option value='8:30'>
-	  </datalist>
-<br>
-			  <button type='submit' form='form1' value='Submit'>Submit</button>
-<br>
-				</div>
-
-									</div>
-	</div>
-		</div>
-		</form>
-	</div>
-	</div>";
-}
-
 
 }
+
+
+
+
 
 
 ?>
