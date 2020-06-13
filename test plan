@@ -1,0 +1,423 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{makecell}
+\usepackage[margin=0.7in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx}
+
+
+
+
+
+
+
+%opening
+\title{Testing Plan Document for Group O }
+\author{Sandra Fares, Nour Ghoniem, Samiha Hesham, Mariam Hesham}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\newpage
+
+
+ 
+
+\section{Github link}
+http://aqueous-dawn-37150.herokuapp.com/
+
+\section{Requirements Tracebaility matrix}
+\FloatBarrier
+\begin{figure}[h]
+\centering
+\includegraphics[width=10.0cm, height=10.0cm]{./test2.jpg}
+\label{label1}
+\end{figure}
+\FloatBarrier
+\newpage
+
+
+
+
+
+
+\section{Test Scenarios}
+
+\subsection {Test Scenario 1: login and registration}
+The customer in order to access anything in the system must register at first by filling the registration form  he/she must enter their name,email,password,confirmation to the first password and the customer's phone number as shown in figures: 1,2 .
+After being registered the customer will be able to login at any time and to view items,view invoice for the items selected,contact with the admin throw the live chatting and logout as shown in figures 3,4.
+
+
+
+
+
+\subsection {Test Scenario 2: Adding items to cart}
+The customer after logging in to the system.He/she has the ability to surf in the home page and pick the item they want add to their cart. The items that were chosen will be saved in orders table in the database. until the customer finishes surfing in the website the items will be stored in the cart till they logout or terminate the website.
+Also the customer has the ability w edit or delete the items selected and stored in the cart as shown in figures : 4,5,6,9.
+
+\subsection{Test scenario 3: checkout function}
+The customer after  pressing checkout button must add the address that he/she will receive the order at. Then the customer will have the ability to see a description to the items chosen  and waits for admin's approval.until the admin accepts the request the status will remain pending as shown in figure 7,8.
+More over, the admin side he has the ability to accept or delete the request and print the invoice of this specific order as shown in figures: 8,20.
+
+\subsection{Test scenario 4: Inserting and deleting functions from admin's side}
+\begin{enumerate}
+\item The admin at his panel has the ability to add/edit and  delete the category list that contains list of artists.
+\item The admin has the ability to add another admin.
+\item The admin has the ability to add items to the system,edit in them or delete them.
+\item The admin has the ability to delete any one from the distributors,subscribers contacts and orders as shown in figures: 26,29,30,31. 
+
+\end{enumerate}
+\subsection{Test scenario 5: live chat system}
+The customer has the ability to communicate with the admin to ask about anything and the admin suppose to respond quickly.
+Also when the order being accepted a forward message will be sent to the customer confirms that the order will be shipped in few days as shown in figure: 15. 
+
+\subsection{Test scenario 6: search functionality}
+The customer and the admin has the ability to search about any item using the items' name as shown in figures: 16,17.
+\subsection {Test scenario 7: Distributor form}
+Customers has the ability to fill a form to be a distributor in the system by filling their business name,contact name email,phone number,business address and their social media page URL
+as shown in figure: 18.
+
+\section{Test cases}
+\subsection{Customer's side view}
+\begin{enumerate}
+\item The customer must enter a valid information to complete registration at first as for example no digits or symbols can be entered in the name text field and the password length must be 8 characters or more as shown in figures: 22,23,24  .
+\item The customer has the ability to reset the password if it is forgotten as shown in figure: 19 .
+\item The customer has the ability to change the phone number or email through edit profile panel but the phone number must be 11 characters as shown in figure: 23,24,2.
+
+\item The customer has the ability to add multiple items to the cart with his/her desired quantity but if a certain item has a limited number the customer will see a disabled icon that he/she cannot add more as shown in figure: 5,6 .
+\item The customer has the ability to fill a distributor form if he has a business and want it to be associated with OMASHA website as shown in figure: 14  .
+\end{enumerate}
+\subsection{Admin's side view}
+\begin{enumerate}
+    \item The main admin is the owner of OMASHA website as he can add more admins through add new admin page  that is shown in figure: 12.
+    
+    \item The admin has the ability to see his profile and to change the password or mobile number as shown in figure: 33.
+    \item The admin can contact all the subscribers in the system and to send mail to all of them to notify them with updates as shown in figures: 23,24.
+    \item The admin can view a list with all the subscribers  Distributors and contacts in the system and has the ability to remove any of them as shown in figures: 2,27,28.
+    \item The admin has the ability to select a specific interval of dates to see a report that contains the net-profit and the number of items that are sold in the system as shown in figure: 32.
+    \item The admin can add items and categories in the system and to delete or edit in them as shown in figures: 10,11.
+    
+    \item The admin has a notification center that sends him live chats with their days and slots.
+\end{enumerate}
+
+
+
+\section{ Testing data}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=15.0cm, height=11.0cm]{./21.png}
+\caption{Registration page for customer}
+\label{label1}
+\end{figure}
+\FloatBarrier
+\begin{figure}[h]
+\centering
+\includegraphics[width=15.0cm, height=11.0cm]{./2222.png}
+\caption{Registration page with invalid data}
+\label{label1}
+\end{figure}
+\FloatBarrier
+\begin{figure}[h]
+\centering
+\includegraphics[width=15.0cm, height=11.0cm]{./2000.png}
+\caption{login page for customer}
+\label{label1}
+\end{figure}
+\FloatBarrier
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=15.0cm, height=11.0cm]{./13.png}
+\caption{Home page that contains items that are available}
+\label{label1}
+\end{figure}
+\FloatBarrier
+\begin{figure}[h]
+\centering
+\includegraphics[width=15.0cm, height=12.0cm]{./14.png}
+\caption{customer editing the order before checkout}
+\label{label1}
+\end{figure}
+\FloatBarrier
+\begin{figure}[h]
+\centering
+\includegraphics[width=15.0cm, height=11.0cm]{./19.png}
+\caption{customer's cart view before checking out}
+\label{label1}
+\end{figure}
+\FloatBarrier
+\newpage
+
+\FloatBarrier
+\begin{figure}[h]
+\centering
+\includegraphics[width=10.0cm, height=10.0cm]{./185.png}
+\caption{adding the address before the invoice is being out}
+\label{label1}
+\end{figure}
+\FloatBarrier
+
+
+\FloatBarrier
+\begin{figure}[h]
+\centering
+\includegraphics[width=10.0cm, height=10.0cm]{./15.png}
+\caption{check out that appears to the customer}
+\label{label1}
+\end{figure}
+\FloatBarrier
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=15.0cm, height=11.0cm]{./16.png}
+\caption{The cart being empty after checkout procedures}
+\label{label1}
+\end{figure}
+\newpage
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=15.0cm, height=11.0cm]{./10.png}
+\caption{The category list from the admin's side view}
+\label{label1}
+\end{figure}
+\newpage
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=15.0cm, height=11.0cm]{./12.png}
+\caption{Adding new category named zap tharwat}
+\label{label1}
+\end{figure}
+\newpage
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=15.0cm, height=11.0cm]{./1.png}
+\caption{Adding new admin to the system}
+\label{label1}
+\end{figure}
+\newpage
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=15.0cm, height=11.0cm]{./2.png}
+\caption{Adding new item to the system}
+\label{label1}
+\end{figure}
+\newpage
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=15.0cm, height=11.0cm]{./3.png}
+\caption{Adding new item to the system but with invalid price}
+\label{label1}
+\end{figure}
+\newpage
+
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=15.0cm, height=11.0cm]{./24.png}
+\caption{live chat between customer and admin}
+\label{label1}
+\end{figure}
+\newpage
+
+
+
+
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=15.0cm, height=11.0cm]{./99.png}
+\caption{customer searching about specific item }
+\label{label1}
+\end{figure}
+\newpage
+
+
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=15.0cm, height=12.0cm]{./88.png}
+\caption{The item to be viewed with it's details after the search result}
+\label{label1}
+\end{figure}
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=15.0cm, height=12.0cm]{./17.png}
+\caption{Distributor Form}
+\label{label1}
+\end{figure}
+\newpage
+\FloatBarrier
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=15.0cm, height=12.0cm]{./111.png}
+\caption{Resetting the password for the customer by sending an email}
+\label{label1}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=15.0cm, height=12.0cm]{./18.png}
+\caption{status being changed after admin's approval to the order}
+\label{label1}
+\end{figure}
+
+\FloatBarrier
+\begin{figure}[h]
+\centering
+\includegraphics[width=15.0cm, height=11.0cm]{./8.png}
+\caption{printed invoice with details shown to customer and admin}
+\label{label1}
+\end{figure}
+\FloatBarrier
+\newpage
+
+
+
+
+\FloatBarrier
+\begin{figure}[h]
+\centering
+\includegraphics[width=10.0cm, height=10.0cm]{./222.png}
+\caption{Edit profile page for customer}
+\label{label1}
+\end{figure}
+\FloatBarrier
+
+\FloatBarrier
+\begin{figure}[h]
+\centering
+\includegraphics[width=15.0cm, height=11.0cm]{./33.png}
+\caption{Edit profile page for customer after entering invalid username}
+\label{label1}
+\end{figure}
+\FloatBarrier
+
+\FloatBarrier
+\begin{figure}[h]
+\centering
+\includegraphics[width=15.0cm, height=11.0cm]{./177.png}
+\caption{Edit profile page for customer after entering invalid phone number}
+\label{label1}
+\end{figure}
+\FloatBarrier
+\newpage
+\newpage
+
+
+
+
+\FloatBarrier
+\begin{figure}[h]
+\centering
+\includegraphics[width=10.0cm, height=10.0cm]{./23.png}
+\caption{Customer entering mail to subscribe the website}
+\label{label1}
+\end{figure}
+\FloatBarrier
+
+
+\FloatBarrier
+\begin{figure}[h]
+\centering
+\includegraphics[width=10.0cm, height=10.0cm]{./122.png}
+\caption{Subscribers list for the admin }
+\label{label1}
+\end{figure}
+\FloatBarrier
+
+
+\FloatBarrier
+\begin{figure}[h]
+\centering
+\includegraphics[width=15.0cm, height=11.0cm]{./166.png}
+\caption{Admin sending mail to all the subscribes}
+\label{label1}
+\end{figure}
+\FloatBarrier
+\newpage
+
+
+
+
+\FloatBarrier
+\begin{figure}[h]
+\centering
+\includegraphics[width=10.0cm, height=10.0cm]{./1333.png}
+\caption{confirmation that the messages are sending }
+\label{label1}
+\end{figure}
+\FloatBarrier
+
+
+\FloatBarrier
+\begin{figure}[h]
+\centering
+\includegraphics[width=15.0cm, height=11.0cm]{./9.png}
+\caption{list or orders in the system with the actions that can be performed from the admin}
+\label{label1}
+\end{figure}
+\FloatBarrier
+\newpage
+
+
+
+
+\FloatBarrier
+\begin{figure}[h]
+\centering
+\includegraphics[width=10.0cm, height=10.0cm]{./6.png}
+\caption{List of distributors that are associated to the website with their details shown to the admin }
+\label{label1}
+\end{figure}
+\FloatBarrier
+
+\FloatBarrier
+\begin{figure}[h]
+\centering
+\includegraphics[width=15.0cm, height=11.0cm]{./4.png}
+\caption{list if contacts that are added to the system}
+\label{label1}
+\end{figure}
+\FloatBarrier
+\newpage
+
+
+
+
+\FloatBarrier
+\begin{figure}[h]
+\centering
+\includegraphics[width=10.0cm, height=10.0cm]{./155.png}
+\caption{Reports that tells the net salary to the admin for specific date }
+\label{label1}
+\end{figure}
+\FloatBarrier
+
+\FloatBarrier
+\begin{figure}[h]
+\centering
+\includegraphics[width=10.0cm, height=10.0cm]{./300.png}
+\caption{ Admin edit profile page}
+\label{label1}
+\end{figure}
+\FloatBarrier
+\end{document}
